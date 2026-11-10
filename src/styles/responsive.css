@@ -1,0 +1,445 @@
+/* === ULTRA-WIDE DESKTOP (>= 1600px) === */
+@media screen and (min-width: 1600px) {
+  html {
+    font-size: 20px;
+  }
+}
+
+/* === TABLET & MOBILE (<= 768px) === */
+@media screen and (max-width: 768px) {
+  .cir_des p,
+  .sec_line,
+  .blognav button span,
+  .blognav a span,
+  .blognav::before,
+  .hmin_text::before,
+  .circle_ribbon {
+    display: none;
+  }
+
+  .esflex {
+    flex-direction: column;
+  }
+
+  .store_gal > div:nth-child(2),
+  .store_gal > div:nth-child(1),
+  .escol2 > div {
+    width: 100%;
+  }
+
+  .eswrap,
+  .eswrap_sml {
+    width: 100%;
+    padding-left: 1.75rem;
+    padding-right: 1.75rem;
+  }
+
+  .eslogo {
+    top: 1.2rem;
+    width: 3.8rem;
+    margin-left: -1.9rem;
+  }
+
+  #navWave {
+    top: 1rem;
+    right: 1.2rem;
+  }
+
+  .buynow {
+    right: auto;
+    left: 1.2rem;
+    top: 1.1rem;
+    z-index: 991;
+  }
+
+  .buynow a {
+    padding: 0 1rem;
+    background-color: #FFFFFF;
+  }
+
+  #mainNav {
+    width: 100vw;
+  }
+
+  #mainNav ul a {
+    font-size: 11vw;
+    line-height: 20vw;
+  }
+
+  .nav_infos {
+    width: 88%;
+    right: 6%;
+    flex-wrap: wrap;
+  }
+
+  /* Hero Mobile */
+  .section_hga,
+  .hga_bg_wrap figure {
+    max-height: 100vh;
+  }
+
+  .hga_bg_wrap {
+    width: 100%;
+  }
+
+  .hga_img {
+    right: 50%;
+    margin: 0 -40% 0 0;
+    width: 80%;
+    top: 22%;
+  }
+
+  .hga_text {
+    top: 12vh;
+    right: 50%;
+    margin: 0 -55vw 0 0;
+  }
+
+  .hga_text svg {
+    width: 110vw;
+    height: 110vw;
+  }
+
+  /* Sticky Rotary Showcase Mobile (Ergonomic 420vh instead of 1000vh + quick dots) */
+  #cirsliTarget {
+    height: 420vh;
+  }
+
+  .circle_section {
+    position: sticky;
+    top: 0;
+    flex-direction: column;
+  }
+
+  .circle_infos {
+    width: 100%;
+    padding: 5.2rem 1.75rem 0;
+  }
+
+  .cirin_title {
+    margin-bottom: 1rem;
+  }
+
+  .cirin_title h2 {
+    font-size: 1.65rem;
+  }
+
+  #cirTitlezh,
+  #cirTitlezh li {
+    height: 2.2rem;
+    line-height: 2.2rem;
+  }
+
+  .cirinfo_btm {
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 1rem;
+  }
+
+  #cirinList li {
+    font-size: 1.05rem;
+    line-height: 2.1rem;
+    height: 2.1rem;
+    padding-left: 1.2rem;
+  }
+
+  #cirinList i {
+    height: 2.1rem;
+  }
+
+  #cirDes {
+    padding: 0;
+  }
+
+  .cir_des {
+    margin-bottom: 0.75rem;
+  }
+
+  .cir_des h3 {
+    font-size: 0.98rem;
+  }
+
+  .circle_slider {
+    width: 100%;
+    height: 48vh;
+    margin-top: auto;
+  }
+
+  .cir_slide {
+    width: 90vw;
+    top: 2vh;
+  }
+
+  .cir_slide figure {
+    margin: 0 auto;
+    width: 48vw;
+  }
+
+  .cir_mainimg {
+    width: 44vw;
+    max-width: 210px;
+  }
+
+  .cir_gifimg {
+    width: 26vw;
+    top: -6vw;
+    left: 10vw;
+  }
+
+  .cir_go_series {
+    bottom: 1.2rem;
+    right: auto;
+    left: 1.5rem;
+  }
+
+  .cir_skip {
+    right: 1.2rem;
+    top: auto;
+    left: auto;
+    bottom: 1.2rem;
+  }
+
+  .cir_skip .arrow {
+    display: none;
+  }
+
+  .cir_dots {
+    display: flex;
+  }
+
+  /* Home Intro Mobile */
+  .section_hgc {
+    padding: 4rem 0 2rem;
+  }
+
+  .home_intro {
+    margin-bottom: 3rem;
+    gap: 1.5rem;
+  }
+
+  .hmin_text,
+  .home_intro.even .hmin_text {
+    order: 2;
+    padding: 0 1.75rem;
+  }
+
+  .hmin_img,
+  .home_intro.even .hmin_img {
+    order: 1;
+    padding: 0 1.75rem;
+  }
+
+  .hmin_text h2,
+  .home_intro.even .hmin_text h2 {
+    align-items: flex-start;
+    text-align: left;
+  }
+
+  .title_leaf h2 {
+    font-size: 2rem;
+  }
+
+  .listpost div.post_image {
+    display: none;
+  }
+
+  .listpost a {
+    flex-wrap: wrap;
+    gap: 0.4rem;
+    padding: 1.2rem 0;
+  }
+
+  .listpost .date {
+    width: 100%;
+    font-size: 0.84rem;
+  }
+
+  /* About Mobile */
+  .abtsec_a {
+    padding-top: 8rem;
+  }
+
+  .abta_deco_title {
+    font-size: 13vw;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .abta_deco_title > div {
+    width: 100%;
+    text-align: left !important;
+    margin: 0 !important;
+  }
+
+  div.abta_cont_wrap {
+    width: 100%;
+    margin: 0 !important;
+  }
+
+  .abta_cont_wrap:last-child figure {
+    height: auto;
+  }
+
+  .bcs_inner {
+    padding: 2.5rem 2rem;
+    width: 92%;
+  }
+
+  .track_wrap {
+    font-size: 18vw;
+  }
+
+  .core_visual {
+    font-size: 11vw;
+  }
+
+  .core_visual .oval {
+    min-width: 34vw;
+    padding: 1rem 0.6rem;
+  }
+
+  /* Drinks Mobile */
+  .cup_slider {
+    height: auto;
+    max-height: none;
+    padding-bottom: 2rem;
+  }
+
+  .cup_slider .bgimg {
+    height: 44vh;
+  }
+
+  div.main_drink {
+    top: 26vh;
+    width: 44vw;
+    height: 54vw;
+  }
+
+  .cup_slider .infos {
+    padding: 4.5rem 1.75rem 0;
+  }
+
+  .cream_bigimg {
+    width: 100%;
+    height: 62vw;
+  }
+
+  .cream_bigcup {
+    position: relative;
+    width: 78vw;
+    height: 42vw;
+    margin: -12vw auto 1rem;
+    left: auto;
+  }
+
+  .cream_infos {
+    position: relative;
+    top: auto;
+    right: auto;
+    width: 100%;
+    padding: 1rem 1.75rem;
+  }
+
+  .cream_ribbon {
+    position: relative;
+    bottom: auto;
+    height: 13vw;
+  }
+
+  .criboon {
+    font-size: 8vw;
+    line-height: 13vw;
+  }
+
+  #menuImg figure {
+    height: 42vh;
+  }
+
+  #menuImg img {
+    max-height: 36vh;
+  }
+
+  .menu_wrap {
+    padding: 1rem 0 0;
+  }
+
+  /* News Mobile */
+  .page_blog {
+    padding-top: 8rem;
+  }
+
+  .blog_wrap {
+    flex-direction: column;
+  }
+
+  .blog_wrap aside,
+  .blog_wrap article {
+    width: 100%;
+  }
+
+  .post_cate ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem 1.2rem;
+  }
+
+  .the_post {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+
+  .the_post:nth-child(even) {
+    margin-top: 0;
+  }
+
+  .the_post_thumb figure {
+    height: 54vw;
+  }
+
+  /* Footer Mobile */
+  footer .eswrap {
+    padding-top: 5rem;
+  }
+
+  .footsocial {
+    position: relative;
+    left: auto;
+    bottom: auto;
+    transform: none;
+    margin: 1.5rem 0;
+    display: flex;
+    justify-content: center;
+  }
+
+  .foot_btm {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 2rem;
+  }
+
+  .footinfos {
+    align-items: center;
+  }
+}
+
+/* === REDUCED MOTION ACCESSIBILITY === */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  .img_scalin img,
+  .hga_bg_wrap figure,
+  .hga_img,
+  .hga_text,
+  .core_visual b,
+  .abta_deco_title span {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}
+

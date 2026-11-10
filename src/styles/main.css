@@ -1,0 +1,8 @@
+@import 'locomotive-scroll/dist/locomotive-scroll.css';
+@import './tokens.css';
+@import './base.css';
+@import './motifs.css';
+@import './components.css';
+@import './pages.css';
+@import './responsive.css';
+

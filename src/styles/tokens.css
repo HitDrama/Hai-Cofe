@@ -1,0 +1,73 @@
+:root {
+  /* === 1. COLOR TOKENS === */
+  --bg-primary: #F8F8F8;
+  --bg-hero: #EDEDE8;
+  --bg-surface-alt: #EBEBE8;
+  --bg-elevated: #FFFFFF;
+  --bg-overlay: rgba(255, 255, 255, 0.76);
+
+  /* Dynamic Series Pastel Backgrounds */
+  --bg-series-cream: #FDF9E8;
+  --bg-series-tea: #FFF8EF;
+  --bg-series-fruit: #F8FFFE;
+  --bg-series-milk: #FAFAFA;
+  --bg-series-limited: #FFF8F8;
+
+  /* Text Hierarchy (WCAG AA upgraded functional contrast while preserving editorial warmth) */
+  --text-strong: #000000;
+  --text-body: #282828;
+  --text-muted: #595959;
+  --text-subtle: #686868;
+  --text-date: #6B6B6B;         /* >= 4.9:1 on #F8F8F8 (fixes original #CCC 1.51:1) */
+  --text-accent-aa: #826243;    /* >= 4.7:1 on #FDF9E8/#F8F8F8 (fixes #DDBB99 1.70:1 on small text) */
+  --text-disabled: #707070;
+
+  /* Decorative Brand Accents & Borders */
+  --accent-primary: #DDBB99;
+  --accent-secondary: #C1A387;
+  --accent-border-pill: #AF9983;
+  --border-hairline: #EFE0D2;
+  --border-neutral: #D1D1D1;
+  --border-divider: #CCCCCC;
+  --state-success: #7BAA82;
+
+  /* === 2. TYPOGRAPHY TOKENS === */
+  --font-display: 'Bellefair', Georgia, serif;
+  --font-sans: 'Be Vietnam Pro', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+
+  --font-size-root: 16px;
+  --font-size-jumbo-marquee: 10vw;
+  --font-size-curved-svg: 8vw;
+  --font-size-ribbon: 7vw;
+  --font-size-hero-svg: 5.8rem;
+  --font-size-h1: 4.5vw;
+  --font-size-nav-link: 4vw;
+  --font-size-sec-title: 3vw;
+  --font-size-h2: 2rem;
+  --font-size-h3: 1.6rem;
+  --font-size-lead: 1.4rem;
+  --font-size-subhead: 1.2rem;
+  --font-size-body: 1rem;
+  --font-size-small: 0.9rem;
+  --font-size-xs: 0.8rem;
+
+  --line-height-body: 1.8;
+  --line-height-heading: 1.4;
+  --letter-spacing-base: 0.04em;
+  --letter-spacing-wide: 0.1em;
+
+  /* === 3. LAYOUT & SPACING TOKENS === */
+  --container-main: 80%;
+  --container-narrow: 60%;
+  --radius-pill: 100px;
+  --radius-ellipse: 100%;
+
+  /* === 4. MOTION & EASING TOKENS === */
+  --ease-editorial-in-out: cubic-bezier(0.76, 0, 0.24, 1);
+  --ease-smooth-out: cubic-bezier(0.25, 1, 0.5, 1);
+  --dur-fast: 0.3s;
+  --dur-medium: 0.5s;
+  --dur-dramatic: 1s;
+  --dur-reveal: 2s;
+}
+

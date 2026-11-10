@@ -1,0 +1,318 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Thực đơn — DRINKS | HAI COFE</title>
+  <meta name="description" content="Thực đơn HAI COFE: Kem muối Pháp, cà phê & trà nguyên bản, trà trái cây nhiệt đới, dòng vân mây và phiên bản giới hạn theo mùa." />
+  <meta name="theme-color" content="#DDBB99" />
+  <link rel="icon" href="/assets/svg/favicon.svg" type="image/svg+xml" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,300;0,400;0,500;1,400&family=Bellefair&display=swap" rel="stylesheet" />
+  <script type="module" src="/src/js/main.js"></script>
+</head>
+<body class="loading" data-barba="wrapper">
+  <header id="header">
+    <div class="eslogo">
+      <a href="./index.html" aria-label="HAI COFE Trang chủ">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 185 276" aria-hidden="true">
+          <path d="M126.4 150.2c-9.2 9.4-21.5 14.8-36.2 14.8-24.8 0-43.6-16.4-43.6-38.9 0-17.8 11.4-30.5 31.2-40.8l-9.8-12.4c-7.6-9.6-11.8-18.8-11.8-29.2 0-18.6 14.8-31.7 35.4-31.7 18.8 0 32.2 11.4 32.2 27.6 0 14.9-9.8 25.8-27.8 34.4l28.8 36.2c6.2-8.8 11.2-19.6 14.2-31.4l12.6 3.4c-4.2 15.2-10.8 28.4-19.2 38.8l14.6 18.2c5.4 6.6 11.6 9.8 19.2 9.8 5.2 0 9.8-1.6 13.8-4.8l5.6 8.8c-6.8 6.4-15.6 9.8-25.8 9.8-12.4 0-22.4-5.2-30.6-15.4l-2.8-3.2zm-34.2-10.2c10.8 0 20.2-4.6 27.2-12.8L86.8 86.6c-14.6 8.2-22.6 18.2-22.6 32.2 0 15.8 11.4 26.2 28 26.2zm-1.2-116c-11.8 0-19.8 7.8-19.8 19.2 0 8.2 3.6 15.8 10.6 24.6l6.8 8.6c13.6-7.2 20.6-15.6 20.6-28.2 0-10.4-7.4-18.2-18.2-18.2z"/>
+          <path class="leaf-accent" d="M142 36c8.5-9.5 22-11 28-4-4 11-15.5 16.5-28 4z"/>
+          <path d="M22 208h10.2v24.4h23.6V208H66v56H55.8v-23.2H32.2V264H22v-56z"/>
+          <path d="M95.4 207.2h7.2L124.8 264h-10.8l-5.2-13.8H88.6L83.4 264H73.2l22.2-56.8zm3.4 14.8l-7.2 19.2h14.4l-7.2-19.2z"/>
+          <path d="M142.6 208h10.4v56h-10.4v-56z"/>
+        </svg>
+      </a>
+    </div>
+
+    <div class="buynow">
+      <a href="./drinks.html"><i>Đặt món</i></a>
+    </div>
+
+    <button type="button" id="navWave" aria-label="Mở trình đơn điều hướng" aria-expanded="false" aria-controls="mainNav">
+      <span class="des bellfont">CLOSE</span>
+      <span class="wave_box">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 455.9 26.4" aria-hidden="true">
+          <path d="M0,8.9c7.6,0,7.6,2,15.2,2c7.6,0,7.6-2,15.2-2c7.6,0,7.6,2,15.2,2c7.6,0,7.6-2,15.2-2c7.6,0,7.6,2,15.2,2c7.6,0,7.6-2,15.2-2c7.6,0,7.6,2,15.2,2c7.6,0,7.6-2,15.2-2c7.6,0,7.6,2,15.2,2c7.6,0,7.6-2,15.2-2c7.6,0,7.6,2,15.2,2c7.6,0,7.6-2,15.2-2c7.6,0,7.6,2,15.2,2c7.6,0,7.6-2,15.2-2c7.6,0,7.6,2,15.2,2c7.6,0,7.6-2,15.2-2c7.6,0,7.6,2,15.2,2c7.6,0,7.6-2,15.2-2c7.6,0,7.6,2,15.2,2c7.6,0,7.6-2,15.2-2c7.6,0,7.6,2,15.2,2c7.6,0,7.6-2,15.2-2c7.6,0,7.6,2,15.2,2c7.6,0,7.6-2,15.2-2c7.6,0,7.6,2,15.2,2c7.6,0,7.6-2,15.2-2c7.6,0,7.6,2,15.2,2c7.6,0,7.6-2,15.2-2c7.6,0,7.6,2,15.2,2c7.6,0,7.6-2,15.2-2h30.4"/>
+          <path d="M0,15.1c7.6,0,7.6,2,15.2,2c7.6,0,7.6-2,15.2-2c7.6,0,7.6,2,15.2,2c7.6,0,7.6-2,15.2-2c7.6,0,7.6,2,15.2,2c7.6,0,7.6-2,15.2-2c7.6,0,7.6,2,15.2,2c7.6,0,7.6-2,15.2-2c7.6,0,7.6,2,15.2,2c7.6,0,7.6-2,15.2-2c7.6,0,7.6,2,15.2,2c7.6,0,7.6-2,15.2-2c7.6,0,7.6,2,15.2,2c7.6,0,7.6-2,15.2-2c7.6,0,7.6,2,15.2,2c7.6,0,7.6-2,15.2-2c7.6,0,7.6,2,15.2,2c7.6,0,7.6-2,15.2-2c7.6,0,7.6,2,15.2,2c7.6,0,7.6-2,15.2-2c7.6,0,7.6,2,15.2,2c7.6,0,7.6-2,15.2-2c7.6,0,7.6,2,15.2,2c7.6,0,7.6-2,15.2-2c7.6,0,7.6,2,15.2,2c7.6,0,7.6-2,15.2-2c7.6,0,7.6,2,15.2,2c7.6,0,7.6-2,15.2-2c7.6,0,7.6,2,15.2,2c7.6,0,7.6-2,15.2-2h30.4"/>
+        </svg>
+      </span>
+    </button>
+
+    <nav id="mainNav" aria-label="Điều hướng chính">
+      <ul>
+        <li><a href="./about.html" title="Về HAI COFE"><b class="bellfont">ABOUT</b><i></i></a></li>
+        <li><a href="./drinks.html" title="Thực đơn thức uống"><b class="bellfont">DRINKS</b><i></i></a></li>
+        <li><a href="./news.html" title="Bản tin &amp; Sự kiện"><b class="bellfont">NEWS</b><i></i></a></li>
+      </ul>
+      <div class="nav_infos">
+        <div><b class="bellfont">&amp; HAI COFE</b></div>
+        <div class="socials">
+          <a class="icon-fb" href="https://facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Facebook HAI COFE"></a>
+          <a class="icon-ig" href="https://instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Instagram HAI COFE"></a>
+        </div>
+        <div><b class="bellfont">08:00 a.m. ~ 21:30 p.m.</b></div>
+        <div><a class="bellfont" href="tel:02838221800" data-no-barba>028-3822 1800</a></div>
+      </div>
+    </nav>
+  </header>
+
+  <div id="pageLoader" aria-hidden="true">
+    <div></div>
+    <span class="bellfont">HAI COFE IS LOADING</span>
+  </div>
+
+  <div id="pageBox">
+    <div data-scroll-container>
+      <div data-barba="container" data-barba-namespace="drinks">
+        <main class="page_drinks">
+          <div data-scroll data-scroll-section>
+            <!-- 3.1 AUTO-PLAYING CUP SLIDER -->
+            <section class="drisec_a">
+              <div class="cup_slider esflex escol2" data-scroll>
+                <div class="bgimg">
+                  <figure><img src="/assets/img/scenes/craft-cream.jpg" alt="Sữa tươi hòa quyện vào cốt trà tạo vân mây" /></figure>
+                  <figure><img src="/assets/img/scenes/craft-roast.jpg" alt="Hạt Arabica và lá Ô Long cao nguyên" /></figure>
+                  <figure><img src="/assets/img/scenes/hero-craft.jpg" alt="Rắc cacao lên lớp kem muối Pháp" /></figure>
+                  <figure><img src="/assets/img/scenes/fruit-harvest.jpg" alt="Bưởi hồng, xoài và tắc vàng tươi" /></figure>
+                  <figure><img src="/assets/img/scenes/seasonal-collection.jpg" alt="Bộ sưu tập giới hạn mùa lễ hội" /></figure>
+                </div>
+                <div class="infos">
+                  <h1 class="cup_title">
+                    <div class="bellfont">
+                      <div>Cloud &amp;HAI</div><div>Pure &amp;HAI</div><div>Cream &amp;HAI</div><div>Fruit &amp;HAI</div><div>&amp;HAI Limited</div>
+                    </div>
+                    <div class="series">
+                      <div class="series_text">
+                        <div>Vân Mây</div><div>Nguyên Bản</div><div>Kem Muối</div><div>Trà Quả</div><div>Mùa Lễ Hội</div>
+                      </div>
+                      <i class="icon-brand-4"></i>Bộ sưu tập
+                    </div>
+                  </h1>
+                  <div class="cup_smimg">
+                    <div>
+                      <div class="cups" data-color="#FAFAFA" data-nav="1">
+                        <figure><img src="/assets/img/cups/cup-4-cloud-latte.svg" alt="Bạc Xỉu Vân Mây" /></figure>
+                      </div>
+                      <div class="cups" data-color="#FFF8EF" data-nav="2">
+                        <figure><img src="/assets/img/cups/cup-2-pure-brew.svg" alt="Cold Brew Ô Long" /></figure>
+                      </div>
+                      <div class="cups" data-color="#FDF9E8" data-nav="3">
+                        <figure><img src="/assets/img/cups/cup-1-salted-cream.svg" alt="Kem Muối Tuyết Sơn" /></figure>
+                      </div>
+                      <div class="cups" data-color="#F8FFFE" data-nav="4">
+                        <figure><img src="/assets/img/cups/cup-3-fruit-tea.svg" alt="Trà Bưởi Hồng Nhiệt Đới" /></figure>
+                      </div>
+                      <div class="cups" data-color="#FFF8F8" data-nav="5">
+                        <figure><img src="/assets/img/cups/cup-6-cacao-whisky.svg" alt="Cacao Macchiato Mùa Lễ Hội" /></figure>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="cup_des">
+                    <div>Khoảnh khắc sữa tươi chạm vào cốt cà phê và hồng trà — chỉ vỏn vẹn 5 giây để dải vân mây hình thành. Sữa thanh trùng nông trại Đà Lạt, mười công đoạn kiểm soát nguồn sữa, béo thanh và hậu vị trà ấm áp.</div>
+                    <div>HAI COFE kiểm soát chất lượng từ tận gốc: hạt Arabica Cầu Đất chín đỏ, lá Ô Long Bảo Lộc hái tay. Ủ lạnh 16 giờ và chiết xuất tươi từng mẻ để mỗi ly đều trọn vẹn hương hoa trắng và vị ngọt hậu.</div>
+                    <div>Lớp kem Pháp mịn như nhung đặt nhẹ trên nền trà — cà phê, tỷ lệ hoàn hảo như tuyết đầu mùa phủ xuống thảo nguyên, dịu dàng mà khó quên.</div>
+                    <div>Trái cây nhiệt đới Việt Nam ép lạnh mỗi sáng: bưởi hồng Da Xanh, xoài cát, tắc vàng, phối cùng thạch ái ngọc và hạt chia — nhiều tầng giòn mát sảng khoái.</div>
+                    <div>Sữa tươi nông trại kết hợp Cacao Barry nguyên bản, điểm chút hương mạch nha ủ gỗ sồi và bánh quy cacao giòn tan — hương vị ấm áp chỉ có trong mùa lễ hội.</div>
+                  </div>
+                </div>
+                <div class="main_drink">
+                  <figure></figure>
+                </div>
+              </div>
+            </section>
+
+            <!-- 3.2 FRENCH CREAM SLIDER -->
+            <section class="drisec_b">
+              <div data-scroll data-scroll-speed="1.5" class="big_circle_style">
+                <div class="bcs_inner">
+                  <div class="star"><i></i><i></i><i></i></div>
+                  <div>
+                    <h2>
+                      <b>Kỹ thuật kem tươi Pháp độc quyền</b>
+                      <span class="bellfont">Cream &amp; HAI</span>
+                    </h2>
+                  </div>
+                </div>
+                <div class="eswrap">
+                  Dòng Kem Muối được chế tác theo kỹ thuật kem tươi nhẹ của Pháp: bông mịn, tan chậm, và ngay cả khi hòa hết vào nền trà vẫn giữ trọn vị sữa béo thanh. Hơn một năm thử nghiệm để cho ra đời 4 công thức kem đặc trưng:
+                </div>
+              </div>
+
+              <div class="cream_slide_wrap">
+                <div class="cream_layout">
+                  <div class="eswrap">
+                    <div class="cream_bigimg">
+                      <figure><img src="/assets/img/scenes/craft-cream.jpg" alt="Kem tuyết muối biển" /></figure>
+                      <figure><img src="/assets/img/scenes/fruit-harvest.jpg" alt="Kem phô mai chanh xanh" /></figure>
+                      <figure><img src="/assets/img/scenes/hero-craft.jpg" alt="Kem khò đường crème brûlée" /></figure>
+                      <figure><img src="/assets/img/scenes/seasonal-collection.jpg" alt="Kem cacao nguyên bản" /></figure>
+                    </div>
+                    <div class="cream_navs bellfont">
+                      <ul>
+                        <li data-cupimg="/assets/img/cups/cream-1-salted.svg">Salted Cream</li>
+                        <li data-cupimg="/assets/img/cups/cream-2-cheese-lime.svg">Cheese Cream</li>
+                        <li data-cupimg="/assets/img/cups/cream-3-brulee.svg">Roasted Cream</li>
+                        <li data-cupimg="/assets/img/cups/cream-4-cacao.svg">Chocolate Cream</li>
+                      </ul>
+                      <i class="icon-brand-4"></i>
+                    </div>
+                  </div>
+                  <div class="cream_bigcup">
+                    <figure></figure>
+                  </div>
+                  <div class="cream_ribbon" aria-hidden="true">
+                    <div>
+                      <div class="criboon bellfont"><div><div>&nbsp;Salted Cream &amp;</div><div>&nbsp;Salted Cream &amp;</div><div>&nbsp;Salted Cream &amp;</div><div>&nbsp;Salted Cream &amp;</div><div>&nbsp;Salted Cream &amp;</div></div></div>
+                      <div class="criboon bellfont"><div><div>&nbsp;Cheese Cream &amp;</div><div>&nbsp;Cheese Cream &amp;</div><div>&nbsp;Cheese Cream &amp;</div><div>&nbsp;Cheese Cream &amp;</div><div>&nbsp;Cheese Cream &amp;</div></div></div>
+                      <div class="criboon bellfont"><div><div>&nbsp;Roasted Cream &amp;</div><div>&nbsp;Roasted Cream &amp;</div><div>&nbsp;Roasted Cream &amp;</div><div>&nbsp;Roasted Cream &amp;</div><div>&nbsp;Roasted Cream &amp;</div></div></div>
+                      <div class="criboon bellfont"><div><div>&nbsp;Chocolate Cream &amp;</div><div>&nbsp;Chocolate Cream &amp;</div><div>&nbsp;Chocolate Cream &amp;</div><div>&nbsp;Chocolate Cream &amp;</div><div>&nbsp;Chocolate Cream &amp;</div></div></div>
+                    </div>
+                  </div>
+                  <div class="cream_infos">
+                    <div class="creaminfo">
+                      <h2><i class="icon-brand-4"></i>Tuyết Muối</h2>
+                      <div class="des">Kem tươi Normandy đánh lạnh cùng muối biển hạt mịn, cảm nhận hương trà và sữa lan tỏa nơi đầu lưỡi.</div>
+                      <div class="creaminfo_link esflex"><a href="./news-detail.html">Thử ngay</a> Hồng Trà Tuyết Muối, Kim Tuyên Tuyết Muối</div>
+                    </div>
+                    <div class="creaminfo">
+                      <h2><i class="icon-brand-4"></i>Phô Mai Chanh Xanh</h2>
+                      <div class="des">Lấy cảm hứng từ Tart Chanh Pháp: kem muối phủ phô mai Parmesan bào tươi và vỏ chanh xanh — chua ngọt thanh tao.</div>
+                      <div class="creaminfo_link esflex"><a href="./news-detail.html">Thử ngay</a> Hồng Trà Phô Mai, Ô Long Phô Mai</div>
+                    </div>
+                    <div class="creaminfo">
+                      <h2><i class="icon-brand-4"></i>Kem Khò Đường</h2>
+                      <div class="des">Rắc đường hạt rồi khò lửa như Crème Brûlée, lớp đường giòn thơm caramel trên nền trà sữa thoảng hương oải hương.</div>
+                      <div class="creaminfo_link esflex"><a href="./news-detail.html">Thử ngay</a> Hồng Trà Brûlée, Cacao Brûlée</div>
+                    </div>
+                    <div class="creaminfo">
+                      <h2><i class="icon-brand-4"></i>Kem Cacao</h2>
+                      <div class="des">Bột cacao canh tác tự nhiên không kiềm hóa, phối kem muối biển thành lớp kem chocolate đậm sâu khó cưỡng.</div>
+                      <div class="creaminfo_link esflex"><a href="./news-detail.html">Thử ngay</a> Hồng Trà Cacao, Thiết Quan Âm Cacao</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </section>
+
+            <!-- 3.3 STICKY CUP + ACCORDION MENU -->
+            <section class="drisec_c">
+              <div class="title_leaf">
+                <div class="deco"></div>
+                <div class="text">
+                  <h2>
+                    <span class="bellfont">DRINKS</span>
+                    <i>Thực đơn thức uống</i>
+                  </h2>
+                </div>
+              </div>
+              <div class="eswrap_sml">
+                <div class="esflex escol2">
+                  <div id="menuImg">
+                    <figure data-scroll data-scroll-sticky data-scroll-target="#menuImg"></figure>
+                  </div>
+                  <div class="menu_wrap">
+                    <div class="drinmenu">
+                      <div class="menu_title">
+                        <h3>Mùa Lễ Hội <span class="bellfont">Limited</span></h3>
+                      </div>
+                      <ul class="menu_list">
+                        <li class="es_collapse" data-img="/assets/img/cups/cup-6-cacao-whisky.svg">
+                          <button type="button" class="me_title">Cacao Macchiato Bánh Quy <span class="bellfont">Cacao Barry Macchiato with Cookie Crumble</span></button>
+                          <div class="me_des"><div>Bánh quy cacao giòn rụm, lớp macchiato bông mịn và cacao đậm sâu — nhiều tầng bất ngờ trong một ngụm.</div></div>
+                        </li>
+                        <li class="es_collapse" data-img="/assets/img/cups/cup-5-sea-salt-yuzu.svg">
+                          <button type="button" class="me_title">Yuzu Muối Hoa Pháp <span class="bellfont">Fleur de Sel Yuzu Spring Tea</span></button>
+                          <div class="me_des"><div>Trà Xuân lá nhỏ hòa mứt yuzu mật ong, rắc muối hoa Bretagne — hương bưởi thơm nồng, chút chua thanh của chanh.</div></div>
+                        </li>
+                        <li class="es_collapse" data-img="/assets/img/cups/cup-7-buckwheat-pearl.svg">
+                          <button type="button" class="me_title">Kiều Mạch Trân Châu <span class="bellfont">Buckwheat Milk Tea with Pearl</span></button>
+                          <div class="me_des"><div>Kiều mạch rang thơm, sữa tươi nông trại và trân châu nấu mỗi giờ — béo thanh, uống mãi không ngấy.</div></div>
+                        </li>
+                      </ul>
+                    </div>
+                    <div class="drinmenu">
+                      <div class="menu_title">
+                        <h3>Nguyên Bản <span class="bellfont">Pure</span></h3>
+                      </div>
+                      <ul class="menu_list">
+                        <li class="es_collapse" data-img="/assets/img/cups/cup-2-pure-brew.svg">
+                          <button type="button" class="me_title">Cold Brew Ô Long Cầu Đất <span class="bellfont">Cau Dat Oolong Cold Brew</span></button>
+                          <div class="me_des"><div>Ủ lạnh 16 giờ, hương hoa trắng thanh khiết và hậu ngọt sâu — không đường vẫn tròn vị.</div></div>
+                        </li>
+                        <li class="es_collapse" data-img="/assets/img/cups/hero-cacao-earl.svg">
+                          <button type="button" class="me_title">Hồng Trà Bá Tước <span class="bellfont">Highland Earl Grey</span></button>
+                          <div class="me_des"><div>Hồng trà cao nguyên ướp cam bergamot tự nhiên, sáng hương và ấm áp nơi cuối vị.</div></div>
+                        </li>
+                      </ul>
+                    </div>
+                    <div class="drinmenu">
+                      <div class="menu_title">
+                        <h3>Kem Muối <span class="bellfont">Cream</span></h3>
+                      </div>
+                      <ul class="menu_list">
+                        <li class="es_collapse" data-img="/assets/img/cups/cup-1-salted-cream.svg">
+                          <button type="button" class="me_title">Kim Tuyên Tuyết Muối <span class="bellfont">Salted Cream Milk Oolong</span></button>
+                          <div class="me_des"><div>Kim Tuyên thơm mùi sữa tự nhiên dưới lớp kem tuyết muối Pháp mịn như nhung.</div></div>
+                        </li>
+                        <li class="es_collapse" data-img="/assets/img/cups/cup-4-cloud-latte.svg">
+                          <button type="button" class="me_title">Bạc Xỉu Vân Mây <span class="bellfont">Cloud Milk Coffee</span></button>
+                          <div class="me_des"><div>Espresso Arabica rang vừa, sữa tươi Đà Lạt và lớp bọt sữa mịn — phiên bản tinh tế của ly bạc xỉu Sài Gòn.</div></div>
+                        </li>
+                      </ul>
+                    </div>
+                    <div class="drinmenu">
+                      <div class="menu_title">
+                        <h3>Trà Quả <span class="bellfont">Fruit</span></h3>
+                      </div>
+                      <ul class="menu_list">
+                        <li class="es_collapse" data-img="/assets/img/cups/cup-3-fruit-tea.svg">
+                          <button type="button" class="me_title">Bưởi Hồng Xoài Nhiệt Đới <span class="bellfont">Tropical Pomelo &amp; Mango Tea</span></button>
+                          <div class="me_des"><div>Tép bưởi hồng mọng nước, xoài cát chín cây và nền Ô Long Xuân — không siro, không phẩm màu.</div></div>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </section>
+          </div>
+        </main>
+
+        <footer data-scroll-id="footer" data-scroll data-scroll-section>
+          <div class="eswrap">
+            <div class="footlogo">
+              <img src="/assets/svg/logo.svg" alt="Biểu trưng HAI COFE" />
+            </div>
+            <div class="footsocial">
+              <div class="socials">
+                <a class="icon-fb" href="https://facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Facebook HAI COFE"></a>
+                <a class="icon-ig" href="https://instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Instagram HAI COFE"></a>
+                <a class="icon-mail" href="mailto:hello@haicofe.vn" data-no-barba aria-label="Email HAI COFE"></a>
+              </div>
+            </div>
+            <div class="foot_btm">
+              <div class="footinfos">
+                <div><b class="bellfont">08:00 a.m. ~ 21:30 p.m.</b></div>
+                <div><a class="bellfont" href="tel:02838221800" data-no-barba>028-3822 1800</a></div>
+                <div><a href="https://maps.google.com" target="_blank" rel="noopener noreferrer">19 Đồng Khởi, Quận 1, TP. Hồ Chí Minh</a></div>
+              </div>
+              <button type="button" id="backtop" aria-label="Cuộn lên đầu trang">
+                <div class="arrow_btn">
+                  <div class="arrow top">
+                    <i class="icon-arrowtop"></i>
+                    <i class="line"></i>
+                  </div>
+                  <div class="bellfont">TOP</div>
+                </div>
+              </button>
+            </div>
+          </div>
+          <div class="copyright bellfont">Copyright 2026 HAI COFE. All rights reserved.</div>
+        </footer>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

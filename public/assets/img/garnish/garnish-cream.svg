@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 260 220" fill="none">
+    <style>
+      @keyframes floatSlow { 0%,100% { transform: translateY(0px) rotate(0deg); } 50% { transform: translateY(-10px) rotate(4deg); } }
+      @keyframes floatAlt { 0%,100% { transform: translateY(0px) rotate(0deg); } 50% { transform: translateY(8px) rotate(-5deg); } }
+      .g1 { animation: floatSlow 3.6s ease-in-out infinite; transform-origin: center; }
+      .g2 { animation: floatAlt 4.2s ease-in-out infinite; transform-origin: center; }
+    </style>
+    <g class="g1">
+      <path d="M88 128c14-26 48-28 62-4 10 18-10 32-32 30-20-2-38-12-30-26z" fill="#FFFDF8" stroke="#E6D6C3" stroke-width="1.5"/>
+      <circle cx="158" cy="76" r="5" fill="#DDBB99"/>
+      <circle cx="74" cy="88" r="3.5" fill="#C1A387"/>
+    </g>
+    <g class="g2">
+      <path d="M148 56l3 8 8 3-8 3-3 8-3-8-8-3 8-3 3-8z" fill="#DDBB99"/>
+      <circle cx="116" cy="64" r="4" fill="#FFFDF8" stroke="#DDBB99" stroke-width="1.2"/>
+      <circle cx="182" cy="126" r="3" fill="#C1A387"/>
+    </g>
+  </svg>

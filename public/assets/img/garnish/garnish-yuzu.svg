@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 260 220" fill="none">
+    <style>
+      @keyframes saltFloat { 0%,100% { transform: translateY(0px) rotate(0deg); } 50% { transform: translateY(-10px) rotate(-6deg); } }
+      .s1 { animation: saltFloat 3.7s ease-in-out infinite; transform-origin: center; }
+    </style>
+    <g class="s1">
+      <circle cx="136" cy="108" r="24" fill="#F2C957"/>
+      <circle cx="136" cy="108" r="19" fill="#FFF1B8"/>
+      <rect x="82" y="84" width="9" height="9" transform="rotate(28 82 84)" fill="#FFFFFF" stroke="#DDBB99" stroke-width="1.2"/>
+      <rect x="176" y="76" width="8" height="8" transform="rotate(15 176 76)" fill="#FFFFFF" stroke="#DDBB99" stroke-width="1.2"/>
+      <path d="M96 146l3 7 7 3-7 3-3 7-3-7-7-3 7-3 3-7z" fill="#DDBB99"/>
+    </g>
+  </svg>

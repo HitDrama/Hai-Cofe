@@ -1,0 +1,193 @@
+/* === RESET & BASE TYPOGRAPHY === */
+*, *::before, *::after {
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+html {
+  font-size: var(--font-size-root);
+}
+
+body, h1, h2, h3, h4, h5, h6, p, ul, ol, li, figure, blockquote {
+  margin: 0;
+  padding: 0;
+}
+
+ul, ol {
+  list-style: none;
+}
+
+i {
+  font-style: normal;
+}
+
+body {
+  font-family: var(--font-sans);
+  font-size: var(--font-size-body);
+  line-height: var(--line-height-body);
+  letter-spacing: var(--letter-spacing-base);
+  color: var(--text-body);
+  background-color: var(--bg-primary);
+  overflow-x: hidden;
+}
+
+body.lock {
+  overflow: hidden;
+}
+
+::selection {
+  color: #FFFFFF;
+  background: var(--accent-secondary);
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+svg {
+  display: block;
+  overflow: visible;
+}
+
+a {
+  color: var(--text-strong);
+  text-decoration: none;
+  transition: color var(--dur-fast);
+}
+
+a:hover {
+  color: var(--text-accent-aa);
+}
+
+button {
+  background: none;
+  border: 0;
+  padding: 0;
+  font: inherit;
+  color: inherit;
+  cursor: pointer;
+}
+
+a:focus-visible,
+button:focus-visible,
+[tabindex="0"]:focus-visible {
+  outline: 2px solid var(--text-accent-aa);
+  outline-offset: 4px;
+}
+
+.bellfont {
+  font-family: var(--font-display);
+  font-weight: 400;
+  letter-spacing: 0.05em;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 400;
+  line-height: var(--line-height-heading);
+}
+
+h1, h2 {
+  color: var(--text-accent-aa);
+}
+
+h1 { font-size: var(--font-size-h1); }
+h2 { font-size: var(--font-size-h2); }
+h3 { font-size: var(--font-size-h3); }
+
+/* Layout helpers matching ES architecture */
+.esflex {
+  display: flex;
+}
+
+.escol2 > div {
+  width: 50%;
+  height: auto;
+}
+
+.eswrap {
+  width: var(--container-main);
+  margin: 0 auto;
+}
+
+.eswrap_sml {
+  width: var(--container-narrow);
+  margin: 0 auto;
+}
+
+/* === SHARED KEYFRAMES (ani.css) === */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes fadeOut {
+  from { opacity: 1; }
+  to { opacity: 0; }
+}
+
+@keyframes fadeInDown {
+  from { opacity: 0; transform: translate3d(0, -20px, 0); }
+  to { opacity: 1; transform: translate3d(0, 0, 0); }
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translate3d(0, 3rem, 0); }
+  to { opacity: 1; transform: translate3d(0, 0, 0); }
+}
+
+@keyframes rotate {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes scrLine {
+  from { transform: translate3d(0, -100%, 0); }
+  to { transform: translate3d(0, 100%, 0); }
+}
+
+@keyframes horiLineAni {
+  0% { transform: translate3d(0, 0, 0); }
+  100% { transform: translate3d(90%, 0, 0); }
+}
+
+@keyframes verLineAni {
+  0% { transform: translate3d(0, 0, 0); }
+  100% { transform: translate3d(0, -90%, 0); }
+}
+
+@keyframes widthIn {
+  from { width: 0; }
+  to { width: 100%; }
+}
+
+@keyframes cupMnOut {
+  from { opacity: 1; transform: translateX(0) scale(1); }
+  to { opacity: 0; transform: translateX(-5rem) scale(0.7); }
+}
+
+@keyframes cupMnIn {
+  from { opacity: 0; transform: translateX(5rem); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+/* Reveal scale-in helper */
+.img_scalin {
+  overflow: hidden;
+}
+
+.img_scalin img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform: scale(1.2);
+  transition: transform var(--dur-reveal) var(--ease-smooth-out);
+}
+
+.img_scalin.esin img {
+  transform: scale(1);
+}
+

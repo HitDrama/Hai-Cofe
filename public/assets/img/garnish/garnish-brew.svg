@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 260 220" fill="none">
+    <style>
+      @keyframes driftA { 0%,100% { transform: translateY(0px) rotate(-6deg); } 50% { transform: translateY(-12px) rotate(6deg); } }
+      @keyframes driftB { 0%,100% { transform: translateY(0px) rotate(8deg); } 50% { transform: translateY(9px) rotate(-6deg); } }
+      .b1 { animation: driftA 3.8s ease-in-out infinite; transform-origin: 110px 110px; }
+      .b2 { animation: driftB 4.4s ease-in-out infinite; transform-origin: 165px 90px; }
+    </style>
+    <g class="b1">
+      <ellipse cx="96" cy="112" rx="14" ry="20" transform="rotate(-28 96 112)" fill="#5C3822"/>
+      <path d="M89 98c6 9 5 18 13 27" stroke="#DDBB99" stroke-width="1.6" stroke-linecap="round"/>
+      <path d="M132 146c14-22 38-26 52-18-6 18-22 28-52 18z" fill="#6D865C"/>
+    </g>
+    <g class="b2">
+      <ellipse cx="166" cy="76" rx="12" ry="17" transform="rotate(24 166 76)" fill="#4A2B18"/>
+      <path d="M168 62c-4 9-2 17-5 27" stroke="#C1A387" stroke-width="1.5" stroke-linecap="round"/>
+      <circle cx="126" cy="64" r="3" fill="#DDBB99"/>
+    </g>
+  </svg>

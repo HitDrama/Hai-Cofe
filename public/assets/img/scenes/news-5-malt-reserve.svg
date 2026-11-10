@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 900" fill="none">
+  <defs>
+    <linearGradient id="bgGrad" x1="0" y1="0" x2="1200" y2="900" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#EFE8E1"/>
+      <stop offset="100%" stop-color="#D4C2B2"/>
+    </linearGradient>
+    <radialGradient id="sunGlow" cx="72%" cy="24%" r="58%">
+      <stop offset="0%" stop-color="#FFFFFF" stop-opacity="0.72"/>
+      <stop offset="100%" stop-color="#FFFFFF" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="1200" height="900" fill="url(#bgGrad)"/>
+  <rect width="1200" height="900" fill="url(#sunGlow)"/>
+  <!-- Architectural shadow blinds -->
+  <g fill="#22160F" opacity="0.045">
+    <polygon points="0,120 1200,0 1200,90 0,210"/>
+    <polygon points="0,310 1200,190 1200,280 0,400"/>
+    <polygon points="0,500 1200,380 1200,470 0,590"/>
+  </g>
+  <ellipse cx="600" cy="450" rx="310" ry="180" transform="rotate(12 600 450)" stroke="#8C6D4F" stroke-width="2"/>
+      <circle cx="600" cy="450" r="120" fill="#5A3520" opacity="0.88"/><circle cx="635" cy="420" r="36" fill="#F5E9D8" opacity="0.75"/>
+</svg>

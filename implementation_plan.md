@@ -122,3 +122,4 @@ Langdi-page/
 
 > [!NOTE]
 > Toàn bộ code thư viện bên thứ ba lấy từ npm chính chủ (MIT), không sao chép file `support.js` hay các file đã minify của andtea. Code hiệu ứng được viết lại theo dạng module ES.
+
