@@ -1807,3 +1807,10 @@ div.main_drink {
   margin-bottom: 1.5rem;
 }
 
+
+.single_title .date a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  color: var(--text-accent-aa);
+}
