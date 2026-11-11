@@ -50,7 +50,6 @@ export function openCraftModal({ title, subtitle, description, image }) {
   closeBtn.type = 'button';
   closeBtn.className = 'closer';
   closeBtn.setAttribute('aria-label', 'Đóng cửa sổ');
-  closeBtn.innerHTML = '<i class="icon-cancel"></i>';
 
   const content = document.createElement('div');
   content.style.maxWidth = '640px';

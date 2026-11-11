@@ -19,6 +19,9 @@ export function initBlogView(container = document) {
         postCards.forEach((card) => {
           const match = cat === 'all' || card.dataset.cat === cat;
           card.classList.toggle('is-hidden', !match);
+          if (match) {
+            card.querySelector('.the_post_thumb')?.classList.add('esin');
+          }
         });
 
         window.setTimeout(() => updateScrollEngine(), 100);

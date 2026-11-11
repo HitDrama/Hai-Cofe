@@ -105,7 +105,6 @@ body:not(.loading) .hga_text {
 .hga_text svg textPath {
   font-family: var(--font-display);
   font-size: 6.3rem;
-  letter-spacing: 0.35rem;
   fill: #FFFFFF;
 }
 
@@ -142,7 +141,6 @@ body:not(.loading) .hga_text {
 /* 1.2 Sticky Rotary Drink Showcase (#cirsliTarget / .circle_section) */
 #cirsliTarget {
   height: 1000vh;
-  background-color: #FDF9E8;
   transition: background-color 0.2s;
   position: relative;
 }
@@ -236,18 +234,19 @@ body:not(.loading) .hga_text {
   display: flex;
   align-items: center;
   font-size: 3vw;
-  line-height: 1.2;
+  line-height: 1.25;
 }
 
 .cirin_title .icon-brand-4 {
   color: #DDBB99;
   font-size: 0.9rem;
-  margin: 0 1.2rem;
+  margin: 0 1.35rem 0 0;
 }
 
 #cirTitlezh {
   overflow: hidden;
-  height: 3.4vw;
+  height: 3.8vw;
+  margin-right: 1.5vw;
 }
 
 #cirTitlezh ul {
@@ -256,8 +255,8 @@ body:not(.loading) .hga_text {
 
 #cirTitlezh li {
   display: block;
-  height: 3.4vw;
-  line-height: 3.4vw;
+  height: 3.8vw;
+  line-height: 3.8vw;
   color: #DDBB99;
   white-space: nowrap;
 }
@@ -278,8 +277,7 @@ body:not(.loading) .hga_text {
   cursor: pointer;
   transition: color 0.3s;
   font-size: 1.4rem;
-  line-height: 2.5rem;
-  height: 2.5rem;
+  line-height: 1.8;
   border-left: 1px solid #DDBB99;
   padding: 0 0 0 2rem;
   white-space: nowrap;
@@ -299,8 +297,8 @@ body:not(.loading) .hga_text {
   top: 0;
   color: #000000;
   font-size: 0.7rem;
-  margin: 0 0 0 -0.6rem;
-  height: 2.5rem;
+  margin: 0 0 0 -0.8rem;
+  height: 2.52rem;
   display: flex;
   align-items: center;
   transition: top 0.3s;
@@ -308,7 +306,7 @@ body:not(.loading) .hga_text {
 }
 
 #cirDes {
-  padding: 0 2vw 0 5vw;
+  padding: 0 0 0 5vw;
   position: relative;
   overflow: hidden;
   opacity: 1;
@@ -343,8 +341,8 @@ body:not(.loading) .hga_text {
 
 .cir_des img {
   margin: 0 0 0 10px;
-  width: 1.5rem;
-  height: 1.5rem;
+  width: 1.6rem;
+  height: auto;
 }
 
 .cir_des p {
@@ -451,19 +449,14 @@ body:not(.loading) .hga_text {
 }
 
 .hmin_text::before {
-  content: '';
-  width: 1rem;
-  height: 0.65rem;
-  background-color: #C1A387;
-  -webkit-mask-image: var(--svg-leaf-tilde);
-  mask-image: var(--svg-leaf-tilde);
-  -webkit-mask-size: contain;
-  mask-size: contain;
-  -webkit-mask-repeat: no-repeat;
-  mask-repeat: no-repeat;
+  content: '\e80d';
+  font-family: 'fontello';
+  color: #C1A387;
   position: absolute;
-  right: -0.5rem;
-  top: 0.8rem;
+  right: -1rem;
+  top: 0.5rem;
+  font-size: 0.8rem;
+  line-height: 1;
 }
 
 .hmin_img {
@@ -488,7 +481,7 @@ body:not(.loading) .hga_text {
 
 .home_intro.even .hmin_text::before {
   right: auto;
-  left: -0.5rem;
+  left: -0.9rem;
 }
 
 .home_intro.even .hmin_img {
@@ -906,6 +899,13 @@ div.abta_cont_wrap {
 }
 
 /* 3.1 Top Auto-Playing Cup Slider (.cup_slider) */
+.drisec_a,
+.drisec_b {
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+}
+
 .cup_slider {
   height: 100vh;
   max-height: 60vw;
@@ -1109,7 +1109,7 @@ body:not(.loading) .main_drink {
 
 .cream_navs i {
   left: auto;
-  right: -0.45rem;
+  right: 0;
   margin: 0;
 }
 
@@ -1298,10 +1298,10 @@ body:not(.loading) .main_drink {
 .me_title i {
   position: absolute;
   left: -2.5rem;
-  top: 2px;
+  top: 0;
   line-height: 1;
   color: #DDBB99;
-  font-size: 24px;
+  font-size: 30px;
 }
 
 .me_title span {
@@ -1342,7 +1342,7 @@ body:not(.loading) .main_drink {
 }
 
 .blog_wrap aside {
-  width: 20%;
+  width: 22%;
 }
 
 .blog_wrap article {
@@ -1356,15 +1356,14 @@ body:not(.loading) .main_drink {
 
 .cate_titledeco i {
   font-size: 1rem;
-  margin-right: 0.4rem;
 }
 
 .cate_titledeco h1 {
   font-family: var(--font-sans);
-  font-size: 0.95rem;
+  font-size: 1rem;
   font-weight: 400;
   color: #DDBB99;
-  margin: -0.6rem 0 2rem;
+  margin: -1rem 0 2rem;
 }
 
 .post_cate {
@@ -1388,19 +1387,14 @@ body:not(.loading) .main_drink {
 }
 
 .blognav::after {
-  content: '';
-  width: 0.85rem;
-  height: 0.55rem;
-  background-color: #DDBB99;
-  -webkit-mask-image: var(--svg-leaf-tilde);
-  mask-image: var(--svg-leaf-tilde);
-  -webkit-mask-size: contain;
-  mask-size: contain;
-  -webkit-mask-repeat: no-repeat;
-  mask-repeat: no-repeat;
+  content: '\e80d';
+  font-family: 'fontello';
+  color: #DDBB99;
   top: 50%;
   left: -1.8rem;
-  margin: -4px 0 0;
+  margin: -6px 0 0;
+  font-size: 0.5rem;
+  line-height: 1;
   position: absolute;
   opacity: 0;
   transform: translateX(-1rem);
@@ -1435,7 +1429,7 @@ body:not(.loading) .main_drink {
 
 .blognav button .cat_vn,
 .blognav a .cat_vn {
-  min-width: 11.2rem;
+  min-width: 10.5rem;
   padding-right: 1rem;
   color: #000000;
   font-weight: 400;
@@ -1480,6 +1474,15 @@ body:not(.loading) .main_drink {
   display: block;
   width: 100%;
   height: 100%;
+  opacity: 0;
+  transform: scale(1.1) rotate(5deg);
+  transition: all 1s 0.5s;
+}
+
+.the_post .esin a,
+body:not(.loading) .the_post_thumb a {
+  opacity: 1;
+  transform: scale(1) rotate(0);
 }
 
 .the_post_thumb img {
@@ -1521,10 +1524,10 @@ body:not(.loading) .main_drink {
 }
 
 .the_post_btm {
-  padding-top: 0.6rem;
   color: #DDBB99;
   display: flex;
   justify-content: space-between;
+  align-items: center;
 }
 
 .the_post_btm a {
@@ -1568,8 +1571,8 @@ body:not(.loading) .main_drink {
   border: 1px solid #DDBB99;
   border-radius: 100%;
   position: absolute;
-  left: -12px;
-  top: -4px;
+  left: -15px;
+  top: -6px;
   transform: rotate(60deg);
 }
 
@@ -1577,18 +1580,26 @@ body:not(.loading) .main_drink {
 .espagination a {
   font-size: 1.4rem;
   padding: 0 2rem 0 0;
+  display: inline-flex;
+  align-items: center;
 }
 
-/* Single Article (.single_title, .edit_style, .related_news) */
+/* Single Article (.single_title, .single_content, .edit_style, .related_news) */
 .single_title {
   margin: 0 0 2rem;
+}
+
+.single_title h1 {
+  font-size: 1.5rem;
+  line-height: 1.5;
+  color: #000000;
+  margin: 0 0 1rem;
 }
 
 .single_title .date {
   position: relative;
   display: flex;
   align-items: center;
-  gap: 0.75rem;
   margin: 0 0 2rem;
 }
 
@@ -1597,52 +1608,108 @@ body:not(.loading) .main_drink {
   width: 1px;
   height: 3rem;
   background-color: #000000;
-  left: 8px;
+  left: 12px;
   bottom: 2rem;
   position: absolute;
 }
 
 .single_title i {
   color: #DDBB99;
-  font-size: 0.75rem;
-  margin: 0 0.75rem 0 0;
+  font-size: 0.6rem;
+  margin: 0 1.5rem 0 0;
 }
 
-.single_title .date span {
+.single_title b {
+  font-weight: normal;
   opacity: 0.5;
 }
 
-.single_title .date a {
+.single_title .post-categories {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.single_title .post-categories a {
   color: #DDBB99;
   font-size: 0.85rem;
 }
 
-.single_title h1 {
-  font-size: 1.6rem;
-  color: #000000;
+.single_tags {
+  margin: 1rem 0;
+}
+
+.social_media li:first-child,
+.single_tags li:first-child {
+  display: block;
+  color: #DDBB99;
+  margin-bottom: 0.4rem;
+}
+
+.single_tags li {
+  display: inline-block;
+}
+
+.single_tags a {
+  padding: 0 0.85rem 0 0;
+  color: #808080;
+  font-size: 0.9rem;
+}
+
+.social_media ul {
+  list-style: none;
+}
+
+.social_media li {
+  display: inline-block;
+  margin: 0 1rem 0 0;
+}
+
+.social_media button,
+.social_media a {
+  cursor: pointer;
+  font-size: 1.2rem;
+  color: #808080;
+  transition: color 0.3s;
+}
+
+.single_tags a:hover,
+.social_media button:hover,
+.social_media a:hover {
+  color: #DDBB99;
+}
+
+.single_content {
+  padding: 0 0 5rem;
+}
+
+.single_content > figure {
+  background: #EBEBE8;
 }
 
 .edit_style {
-  width: 100%;
-  margin: 2rem 0 3rem;
+  width: 80%;
+  margin: 4rem auto;
   text-align: left;
 }
 
 .edit_style p {
-  font-size: 1.05rem;
-  margin: 0 0 1.4rem;
+  font-size: 1.1rem;
+  margin: 0 0 1.2rem;
   color: #282828;
 }
 
-.edit_style h3 {
-  font-size: 1.35rem;
+.edit_style h3,
+.edit_style h4 {
+  font-size: 1.4rem;
   color: #000000;
-  margin: 3.2rem 0 1.4rem;
+  margin: 4rem 0 2rem;
   padding: 0 0 0 1rem;
   position: relative;
 }
 
-.edit_style h3::before {
+.edit_style h3::before,
+.edit_style h4::before {
   content: '';
   position: absolute;
   z-index: -1;
@@ -1656,8 +1723,8 @@ body:not(.loading) .main_drink {
 }
 
 .edit_style blockquote {
-  padding: 2.4rem 2rem 0.5rem;
-  margin: 2.5rem 0;
+  padding: 2rem 0 0;
+  margin: 2rem 0 3rem;
   text-align: center;
   font-weight: 500;
   color: #000000;
@@ -1671,65 +1738,23 @@ body:not(.loading) .main_drink {
   position: absolute;
   color: #DDBB99;
   left: 50%;
-  top: -1rem;
+  top: -20px;
   transform: translateX(-50%);
+}
+
+.edit_style blockquote h3 {
+  display: inline-block;
+  margin: 1rem 0 0.5rem;
+  padding: 0;
+}
+
+.edit_style blockquote h3::before {
+  display: none;
 }
 
 .edit_style figure {
   margin: 2rem 0;
   background: #EBEBE8;
-}
-
-.single_meta_bar {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  align-items: center;
-  gap: 1.5rem;
-  padding: 1.5rem 0;
-  border-top: 1px solid #CCCCCC;
-}
-
-.single_tags {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 0.75rem;
-}
-
-.single_tags span {
-  color: #DDBB99;
-}
-
-.single_tags a {
-  color: #808080;
-  padding: 0 0.5rem 0 0;
-}
-
-.social_media {
-  display: flex;
-  align-items: center;
-  gap: 0.75rem;
-}
-
-.social_media button,
-.social_media a {
-  width: 2.6rem;
-  height: 2.6rem;
-  border-radius: 50%;
-  border: 1px solid #D1D1D1;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  color: #808080;
-  transition: border-color 0.3s, color 0.3s;
-}
-
-.single_tags a:hover,
-.social_media button:hover,
-.social_media a:hover {
-  border-color: #DDBB99;
-  color: #DDBB99;
 }
 
 .related_news {
@@ -1741,5 +1766,5 @@ body:not(.loading) .main_drink {
 .related_news h2 {
   font-size: 1.4rem;
   color: #000000;
-  margin-bottom: 1.5rem;
+  margin-bottom: 1rem;
 }

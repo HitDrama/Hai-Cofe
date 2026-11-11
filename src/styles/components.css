@@ -183,46 +183,30 @@ header.navopen #mainNav li {
 }
 
 #mainNav ul a::before {
-  content: '';
-  width: 1.5rem;
-  height: 1.5rem;
+  content: '\e800';
+  font-size: 1.5rem;
+  font-family: 'fontello';
+  line-height: 1;
   margin: 0 2rem 0 0;
-  background-color: currentColor;
-  -webkit-mask-image: var(--svg-leaf-bud);
-  mask-image: var(--svg-leaf-bud);
-  -webkit-mask-size: contain;
-  mask-size: contain;
-  -webkit-mask-repeat: no-repeat;
-  mask-repeat: no-repeat;
-  transition: background-color 0.3s;
+  transition: color 0.3s;
 }
 
 #mainNav li:nth-child(2) a::before {
-  width: 2rem;
-  height: 2rem;
-  -webkit-mask-image: var(--svg-cup-mark);
-  mask-image: var(--svg-cup-mark);
+  content: '\e801';
+  font-size: 2rem;
 }
 
 #mainNav li:nth-child(3) a::before {
-  width: 1rem;
-  height: 1rem;
-  -webkit-mask-image: var(--svg-spark);
-  mask-image: var(--svg-spark);
+  content: '\e802';
+  font-size: 1rem;
 }
 
 #mainNav ul a::after {
-  content: '';
-  width: 1.2rem;
-  height: 0.75rem;
+  content: '\e80d';
+  font-size: 1rem;
+  font-family: 'fontello';
+  line-height: 1;
   margin: 0 0 0 5vw;
-  background-color: #DDBB99;
-  -webkit-mask-image: var(--svg-leaf-tilde);
-  mask-image: var(--svg-leaf-tilde);
-  -webkit-mask-size: contain;
-  mask-size: contain;
-  -webkit-mask-repeat: no-repeat;
-  mask-repeat: no-repeat;
   opacity: 0;
   transform: translateX(-2rem);
   transition: all 0.3s;
@@ -233,10 +217,11 @@ header.navopen #mainNav li {
 }
 
 #mainNav ul a:hover::before {
-  background-color: #DDBB99;
+  color: #DDBB99;
 }
 
 #mainNav ul a:hover::after {
+  color: #DDBB99;
   opacity: 1;
   transform: translateX(0);
 }
@@ -418,7 +403,7 @@ body.loaded #pageLoader span {
   border-radius: 100%;
   width: 20vw;
   height: 14vw;
-  margin: -7vw 0 0 -10vw;
+  margin: -7vw 0 0 3vw;
   opacity: 0.6;
 }
 
@@ -466,8 +451,8 @@ body.loaded #pageLoader span {
 
 .espopup .closer {
   position: absolute;
-  right: 1.5rem;
-  top: 1.5rem;
+  right: -4rem;
+  top: -3rem;
   width: 3rem;
   height: 3rem;
   border-radius: 100%;
@@ -477,6 +462,13 @@ body.loaded #pageLoader span {
   justify-content: center;
   cursor: pointer;
   transition: transform 0.3s;
+}
+
+.espopup .closer::before {
+  content: '\e812';
+  font-family: 'fontello';
+  font-size: 0.8rem;
+  line-height: 1;
 }
 
 .espopup .closer:hover {
@@ -572,6 +564,11 @@ footer .eswrap {
 
 .footsocial a {
   margin: 0 0.5rem;
+}
+
+.footsocial .icon-mail::before {
+  font-size: 0.8rem;
+  margin: 0 0 0 -3px;
 }
 
 .foot_btm {

@@ -50,7 +50,11 @@
 
   #mainNav ul a {
     font-size: 12vw;
-    line-height: 24vw;
+    line-height: 26vw;
+  }
+
+  #mainNav ul a i {
+    bottom: 1rem;
   }
 
   .nav_infos {
@@ -60,6 +64,22 @@
     padding: 0 2rem;
     flex-wrap: wrap;
     gap: 0.75rem;
+  }
+
+  /* Popup Modal Mobile */
+  .espopup .inner {
+    width: 100vw;
+    height: 80vh;
+    position: relative;
+    left: 0;
+    top: 10vh;
+    margin: 0;
+    padding: 1.5rem;
+  }
+
+  .espopup .closer {
+    right: 1rem;
+    top: 1rem;
   }
 
   /* Hero Mobile (matching andtea_hero_mobile.png 1:1) */
@@ -110,6 +130,11 @@
 
   .cirin_title h2 {
     font-size: 1.8rem;
+  }
+
+  .cirin_title .icon-brand-4 {
+    font-size: 0.65rem;
+    margin: 0 1.2rem 0 0.5rem;
   }
 
   #cirTitlezh,
@@ -193,6 +218,10 @@
   }
 
   /* Home Intro Mobile */
+  .section_hgc {
+    padding: 2rem 0;
+  }
+
   .home_intro {
     margin: 0;
   }
@@ -224,6 +253,10 @@
     transform: none !important;
   }
 
+  .section_hgd {
+    height: auto;
+  }
+
   .section_hgd figure {
     height: 50vw;
   }
@@ -231,6 +264,10 @@
   .section_hgd figure img {
     height: 100%;
     margin-top: 0;
+  }
+
+  .ovaltext_wrap {
+    margin: 0;
   }
 
   .title_leaf {
@@ -266,12 +303,25 @@
   }
 
   /* About Mobile */
+  .page_about {
+    width: 100%;
+    overflow: hidden;
+  }
+
   .abtsec_a {
     padding-top: 8rem;
   }
 
+  .abtsec_a > .eswrap::before {
+    height: 2rem;
+    position: relative;
+    left: auto;
+    display: block;
+    margin: 0 auto 1rem;
+  }
+
   .abta_deco_title {
-    font-size: 12vw;
+    font-size: 10vw;
     margin: 0 0 2rem;
   }
 
@@ -300,6 +350,18 @@
     width: 92%;
   }
 
+  .bcs_inner br {
+    display: none;
+  }
+
+  .bcs_inner .star {
+    width: 3rem;
+  }
+
+  .bcs_inner::after {
+    height: 4rem;
+  }
+
   .track_wrap {
     font-size: 16vw;
   }
@@ -313,43 +375,75 @@
 
   .core_visual {
     margin: 0;
-    font-size: 10vw;
+    font-size: 9vw;
   }
 
   .core_visual > div {
     flex-wrap: wrap;
   }
 
-  .core_visual .oval {
-    width: 34vw;
-    padding: 1rem 0.5rem;
+  .core_visual img {
+    width: 6vw;
+    height: 6vw;
   }
 
-  /* Drinks Mobile */
-  .cup_slider {
-    height: auto;
+  .core_visual .oval {
+    width: 34vw;
+    padding: 0.9rem 0.5rem;
+    font-size: 0.85rem;
+  }
+
+  /* Drinks Mobile + Authentic 'TAP ME ↓' Fontello Badge (\e815) */
+  .cup_slider.esflex {
+    display: flex;
+    flex-wrap: wrap;
     max-height: none;
+    height: auto;
+  }
+
+  .cup_slider.esflex > div {
+    width: 50%;
   }
 
   .cup_slider .bgimg {
-    height: 55vh;
+    height: 70vh;
   }
 
   .cup_slider.esflex > div.main_drink {
-    width: 44vw;
-    height: 58vw;
-    margin: -14vw 0 0 -22vw;
-    top: 42vh;
+    width: 40vw;
+    height: 60vw;
+    margin: -14vw 0 0 -20vw;
+    top: 70vw;
   }
 
-  .cup_slider .infos {
-    width: 100%;
-    padding: 5rem 2rem 3rem;
-    background-color: #FFFFFF;
+  .cup_smimg {
+    position: absolute;
+    right: -170vw;
+    top: -36vh;
+    width: 220vw;
+    z-index: 1;
+  }
+
+  .drisec_a::before {
+    content: '\e815';
+    font-family: 'fontello';
+    position: absolute;
+    top: 18vw;
+    right: 13.5vw;
+    font-size: 5rem;
+    color: #000000;
+    z-index: 3;
+    pointer-events: none;
   }
 
   .cup_slider .cups {
-    width: 24vw;
+    width: 20vw;
+  }
+
+  .cup_slider.esflex > div.infos {
+    width: 100%;
+    padding: 2.5rem 2rem 2rem;
+    background-color: #FFFFFF;
   }
 
   .cup_title,
@@ -359,12 +453,21 @@
     padding: 0;
   }
 
+  .cup_title .series {
+    font-size: 1.2rem;
+    margin: 0 0 10px;
+  }
+
   .drisec_b {
     padding: 0;
   }
 
+  .drisec_b .big_circle_style {
+    margin: 3rem 0;
+  }
+
   .drisec_b .big_circle_style .eswrap {
-    width: 100%;
+    width: 92%;
   }
 
   .cream_layout .eswrap {
@@ -418,6 +521,10 @@
     padding: 0;
   }
 
+  .menu_list {
+    padding: 0 0 0 1.5rem;
+  }
+
   #menuImg figure {
     height: 44vh;
   }
@@ -427,10 +534,10 @@
   }
 
   .menu_title span {
-    font-size: 2.5rem;
+    font-size: 2.4rem;
   }
 
-  /* News Mobile */
+  /* News & News Detail Mobile */
   .page_blog {
     padding: 10rem 0 0;
   }
@@ -443,26 +550,47 @@
   .blog_wrap aside,
   .blog_wrap article {
     width: 100%;
+    padding: 0;
   }
 
   .cate_titledeco {
     text-align: center;
   }
 
+  .cate_titledeco i {
+    margin: 0 0 0 -25px;
+  }
+
   .post_cate {
     padding: 1.5rem 0 2rem;
   }
 
-  .post_cate ul {
+  #postCategorie > div > ul {
     display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    justify-content: flex-start;
+    padding: 0 0 1rem;
+  }
+
+  #postCategorie .single_tags ul,
+  #postCategorie .social_media ul,
+  #postCategorie .single_title ul {
+    display: block;
+    text-align: center;
+    overflow: visible;
+  }
+
+  .blognav::after {
+    top: 0;
+    left: 42%;
   }
 
   .blognav button,
   .blognav a {
-    padding: 0 0.85rem;
+    padding: 0 0.9rem;
     border-right: 1px solid #CCCCCC;
+    white-space: nowrap;
   }
 
   .blognav:first-child button,
@@ -473,12 +601,17 @@
   .blognav button .cat_vn,
   .blognav a .cat_vn {
     min-width: auto;
+    padding-right: 0;
+  }
+
+  .posts_wrap {
+    margin: 0;
   }
 
   .the_post {
     flex: 100%;
     max-width: 100%;
-    padding: 1rem 0;
+    padding: 1rem 0 1.5rem;
   }
 
   .the_post:nth-child(even) {
@@ -487,6 +620,56 @@
 
   .the_post_thumb figure {
     height: 56vw;
+  }
+
+  .page-numbers {
+    justify-content: center;
+  }
+
+  .espagination.eswrap {
+    padding: 2rem 0 5rem;
+  }
+
+  .single_title .date {
+    justify-content: center;
+    flex-direction: column;
+  }
+
+  .single_title .date::before {
+    position: relative;
+    left: auto;
+    bottom: 0;
+    margin-bottom: 0.5rem;
+  }
+
+  .single_title i {
+    margin: 0 1.2rem 0.4rem 0;
+  }
+
+  .single_title h1 {
+    text-align: center;
+  }
+
+  .single_title .post-categories {
+    justify-content: center;
+  }
+
+  .single_tags,
+  .social_media {
+    text-align: center;
+  }
+
+  .social_media li:first-child {
+    margin: 0 0 0.4rem;
+  }
+
+  .social_media {
+    margin: 0 0 1.5rem;
+  }
+
+  .edit_style {
+    width: 100%;
+    margin: 2.5rem 0;
   }
 
   /* Footer Mobile */
@@ -519,6 +702,43 @@
 
   .copyright {
     padding: 3rem 0 2.5rem;
+  }
+}
+
+/* === SMALL MOBILE (<= 550px) === */
+@media screen and (max-width: 550px) {
+  .drisec_a::before {
+    top: 22vh;
+    font-size: 3rem;
+    right: 11vw;
+  }
+
+  .cirin_title h2 {
+    font-size: 1.35rem;
+  }
+
+  #cirTitlezh,
+  #cirTitlezh li {
+    height: 1.8rem;
+    line-height: 1.8rem;
+  }
+
+  .cirin_title .icon-brand-4 {
+    font-size: 0.6rem;
+    margin: 0 1.1rem 0 0.35rem;
+  }
+
+  .cream_navs li {
+    font-size: 1rem;
+    padding: 0 12px 0 0;
+  }
+
+  .cream_navs {
+    margin: 0.5rem 1rem 0 0;
+  }
+
+  #backtop {
+    transform: scale(0.8);
   }
 }
 

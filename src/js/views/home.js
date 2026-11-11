@@ -48,7 +48,7 @@ export function initHomeView(container = document) {
     });
   }
 
-  // 4. Sticky Rotary Drink Showcase (#cirsliTarget) - Dynamic N Series
+  // 4. Sticky Rotary Drink Showcase (#cirsliTarget) - Authentic 5-Series Rotary Engine
   const targetEl = container.querySelector('#cirsliTarget');
   const circleSec = container.querySelector('.circle_section');
   const slides = Array.from(container.querySelectorAll('.cir_slide'));
@@ -59,16 +59,17 @@ export function initHomeView(container = document) {
   const ribbonInner = ribbonWrap ? ribbonWrap.querySelector('div') : null;
   const skipBtn = container.querySelector('.cir_skip');
   const nextSection = container.querySelector('.section_hgc');
-  const dotsWrap = container.querySelector('.cir_dots');
 
   const count = slides.length;
   const stepAngle = count > 0 ? 360 / count : 72;
   const totalSweep = count > 1 ? stepAngle * (count - 1) : 0;
 
   let activeIdx = 0;
+  let desiredIdx = 0;
   let listIsAni = false;
   let isSnapping = false;
   let settleTimer = null;
+  const panelTimers = [];
 
   // Initialize initial rotation angles dynamically for N slides
   slides.forEach((slide, idx) => {
@@ -80,7 +81,44 @@ export function initHomeView(container = document) {
     cleanups.push(followCursorPara(ribbonInner, circleSec));
   }
 
-  function updateSeriesUI(idx) {
+  function applyPanelCrossfade(nextIdx) {
+    desiredIdx = nextIdx;
+    if (activeIdx === nextIdx || listIsAni) return;
+
+    listIsAni = true;
+    activeIdx = nextIdx;
+
+    if (desWrap) desWrap.classList.add('leave');
+    if (ribbonWrap) ribbonWrap.classList.add('leave');
+
+    const tSwap = window.setTimeout(() => {
+      const targetIdx = desiredIdx;
+      activeIdx = targetIdx;
+      if (desWrap) {
+        Array.from(desWrap.children).forEach((panel, i) => {
+          panel.classList.toggle('active', i === targetIdx);
+        });
+      }
+      if (ribbonWrap) {
+        Array.from(ribbonWrap.querySelectorAll('.ciriboon')).forEach((rib, i) => {
+          rib.classList.toggle('active', i === targetIdx);
+        });
+      }
+    }, 300);
+
+    const tDone = window.setTimeout(() => {
+      if (desWrap) desWrap.classList.remove('leave');
+      if (ribbonWrap) ribbonWrap.classList.remove('leave');
+      listIsAni = false;
+      if (desiredIdx !== activeIdx) {
+        applyPanelCrossfade(desiredIdx);
+      }
+    }, 600);
+
+    panelTimers.push(tSwap, tDone);
+  }
+
+  function updateSeriesUI(idx, isStickyActive) {
     if (idx === undefined || idx < 0 || idx >= count) return;
 
     // Slide Vietnamese category title vertically
@@ -89,48 +127,20 @@ export function initHomeView(container = document) {
       titleWrap.children[0].style.transform = `translate3d(0, -${itemH * idx}px, 0)`;
     }
 
-    // Move leaf pointer & highlight series list
+    // Move brand-4 pointer & highlight series list (only active once inside sticky zone)
     if (navListWrap) {
       const items = Array.from(navListWrap.querySelectorAll('li'));
       const leafIcon = navListWrap.querySelector('i');
       if (items[0] && leafIcon) {
         leafIcon.style.top = `${items[0].offsetHeight * idx}px`;
       }
-      items.forEach((li, i) => li.classList.toggle('active', i === idx));
-    }
-
-    // Quick dots sync
-    if (dotsWrap) {
-      Array.from(dotsWrap.querySelectorAll('button')).forEach((btn, i) => {
-        btn.classList.toggle('active', i === idx);
-        btn.setAttribute('aria-pressed', i === idx ? 'true' : 'false');
+      items.forEach((li, i) => {
+        li.classList.toggle('active', Boolean(isStickyActive) && i === idx);
       });
     }
 
     // Crossfade descriptions & bottom ribbon when active series changes
-    if (activeIdx !== idx && !listIsAni) {
-      listIsAni = true;
-      activeIdx = idx;
-
-      if (desWrap) desWrap.classList.add('leave');
-      if (ribbonWrap) ribbonWrap.classList.add('leave');
-
-      window.setTimeout(() => {
-        if (desWrap) {
-          Array.from(desWrap.children).forEach((panel, i) => {
-            panel.classList.toggle('active', i === idx);
-          });
-          desWrap.classList.remove('leave');
-        }
-        if (ribbonWrap) {
-          Array.from(ribbonWrap.querySelectorAll('.ciriboon')).forEach((rib, i) => {
-            rib.classList.toggle('active', i === idx);
-          });
-          ribbonWrap.classList.remove('leave');
-        }
-        listIsAni = false;
-      }, 500);
-    }
+    applyPanelCrossfade(idx);
   }
 
   function scrollToSeries(idx) {
@@ -139,7 +149,8 @@ export function initHomeView(container = document) {
     const rect = targetEl.getBoundingClientRect();
     const secDocTop = scrollState.y + rect.top;
     const scrollable = Math.max(1, targetEl.offsetHeight - window.innerHeight);
-    const destY = secDocTop + (scrollable * idx) / (count - 1);
+    const offset = idx === 0 ? 8 : (scrollable * idx) / (count - 1);
+    const destY = secDocTop + offset;
 
     scrollToTarget(destY, {
       duration: 450,
@@ -160,14 +171,6 @@ export function initHomeView(container = document) {
     });
   }
 
-  if (dotsWrap) {
-    dotsWrap.querySelectorAll('button').forEach((btn, idx) => {
-      const onClick = () => scrollToSeries(idx);
-      btn.addEventListener('click', onClick);
-      cleanups.push(() => btn.removeEventListener('click', onClick));
-    });
-  }
-
   if (skipBtn && nextSection) {
     const onSkip = () => scrollToTarget(nextSection);
     skipBtn.addEventListener('click', onSkip);
@@ -183,10 +186,10 @@ export function initHomeView(container = document) {
   const unsubScroll = onScrollTick(({ y }) => {
     const reduced = prefersReducedMotion();
 
-    // 5a. Hero split motion
-    if (!reduced && heroBgImg && heroDrinkImg && y < window.innerHeight * 1.4) {
+    // 5a. Hero split motion (matches original scripts.js 1:1)
+    if (!reduced && heroBgImg && heroDrinkImg && y < window.innerHeight * 1.5) {
       heroBgImg.style.transform = `scale(${(1 + y / 2000).toFixed(4)})`;
-      heroDrinkImg.style.transform = `translate3d(0, ${(y * 0.65).toFixed(1)}px, 0)`;
+      heroDrinkImg.style.transform = `translate3d(0, ${y.toFixed(1)}px, 0)`;
     }
 
     // 5b. Sticky Rotary Drink Showcase
@@ -195,46 +198,73 @@ export function initHomeView(container = document) {
       const scrollable = Math.max(1, targetEl.offsetHeight - window.innerHeight);
 
       if (rect.top <= window.innerHeight && rect.bottom >= 0) {
-        const rawProgress = -rect.top / scrollable;
-        const progress = Math.max(0, Math.min(1, rawProgress));
-        const curAngle = progress * totalSweep;
+        if (rect.top >= 0) {
+          // Pre-sticky state: off-white #F8F8F8 inherited background, all 5 nav items in #DDBB99, first cup resting at 0deg
+          slides.forEach((slide, i) => {
+            const baseAngle = i * stepAngle;
+            slide.style.transform = reduced ? 'rotate(0deg)' : `rotate(-${baseAngle}deg)`;
+            slide.classList.toggle('in', i === 0);
+          });
+          targetEl.style.backgroundColor = '';
+          updateSeriesUI(0, false);
+        } else {
+          // Sticky rotary zone active (scrV > cirSec.top)
+          const rawProgress = -rect.top / scrollable;
+          const progress = Math.max(0, Math.min(1, rawProgress));
+          const curAngle = progress * totalSweep;
 
-        let detectedIdx = activeIdx;
-        let activeBgColor = null;
+          let detectedIdx = undefined;
+          let activeBgColor = '';
 
-        slides.forEach((slide, i) => {
-          const baseAngle = i * stepAngle;
-          const startAngle = rect.top > 0 ? -baseAngle : curAngle - baseAngle;
-          slide.style.transform = reduced ? 'rotate(0deg)' : `rotate(${startAngle.toFixed(2)}deg)`;
-
-          const isInWindow = reduced
-            ? Math.round(progress * (count - 1)) === i
-            : startAngle >= -50 && startAngle <= 30;
-
-          if (isInWindow) {
-            slide.classList.add('in');
-            detectedIdx = i;
-            activeBgColor = slide.querySelector('figure')?.dataset.bgcolor || null;
+          if (-rect.top >= scrollable) {
+            slides.forEach((slide, i) => {
+              const isLast = i === count - 1;
+              if (isLast) {
+                slide.style.transform = 'rotate(0deg)';
+              } else {
+                const startAngle = totalSweep - i * stepAngle;
+                slide.style.transform = reduced ? 'rotate(0deg)' : `rotate(${startAngle.toFixed(2)}deg)`;
+              }
+              slide.classList.toggle('in', isLast);
+            });
+            detectedIdx = count - 1;
+            activeBgColor = slides[count - 1]?.querySelector('figure')?.dataset.bgcolor || '';
           } else {
-            slide.classList.remove('in');
+            slides.forEach((slide, i) => {
+              const baseAngle = i * stepAngle;
+              const startAngle = curAngle - baseAngle;
+              slide.style.transform = reduced ? 'rotate(0deg)' : `rotate(${startAngle.toFixed(2)}deg)`;
+
+              const isInWindow = reduced
+                ? Math.round(progress * (count - 1)) === i
+                : startAngle >= -50 && startAngle <= 30;
+
+              if (isInWindow) {
+                slide.classList.add('in');
+                detectedIdx = i;
+                activeBgColor = slide.querySelector('figure')?.dataset.bgcolor || '';
+              } else {
+                slide.classList.remove('in');
+              }
+            });
           }
-        });
 
-        if (activeBgColor) {
           targetEl.style.backgroundColor = activeBgColor;
-        }
-        updateSeriesUI(detectedIdx);
+          if (detectedIdx !== undefined) {
+            updateSeriesUI(detectedIdx, true);
+          }
 
-        // Gentle auto-snap when user stops scrolling inside rotary zone (desktop smooth mode)
-        if (!reduced && rect.top < -20 && rect.bottom > window.innerHeight + 20 && scrollState.winW > 768) {
-          if (settleTimer) window.clearTimeout(settleTimer);
-          settleTimer = window.setTimeout(() => {
-            const snapIdx = Math.round(progress * (count - 1));
-            const snapProgress = snapIdx / (count - 1);
-            if (Math.abs(progress - snapProgress) > 0.035 && !isSnapping) {
-              scrollToSeries(snapIdx);
-            }
-          }, 420);
+          // Gentle auto-snap when user stops scrolling inside rotary zone (desktop smooth mode)
+          if (!reduced && rect.top < -20 && rect.bottom > window.innerHeight + 20 && scrollState.winW > 768) {
+            if (settleTimer) window.clearTimeout(settleTimer);
+            settleTimer = window.setTimeout(() => {
+              const snapIdx = Math.round(progress * (count - 1));
+              const snapProgress = snapIdx / (count - 1);
+              if (Math.abs(progress - snapProgress) > 0.035 && !isSnapping) {
+                scrollToSeries(snapIdx);
+              }
+            }, 420);
+          }
         }
       }
     }
@@ -245,7 +275,7 @@ export function initHomeView(container = document) {
         const oRect = ovalSection.getBoundingClientRect();
         if (oRect.top < window.innerHeight && oRect.bottom > 0) {
           const travelled = window.innerHeight - oRect.top;
-          const offsetPct = -(travelled * 0.018);
+          const offsetPct = -(travelled * 0.02);
           ovalTextPath.setAttribute('startOffset', `${offsetPct.toFixed(2)}%`);
         }
       } else {
@@ -257,10 +287,12 @@ export function initHomeView(container = document) {
   cleanups.push(unsubScroll);
   cleanups.push(() => {
     if (settleTimer) window.clearTimeout(settleTimer);
+    while (panelTimers.length > 0) {
+      window.clearTimeout(panelTimers.pop());
+    }
   });
 
   return () => {
     for (const fn of cleanups) fn();
   };
 }
-
