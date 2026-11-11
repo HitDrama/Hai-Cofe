@@ -23,9 +23,12 @@ export function syncActiveNavLink() {
   document.querySelectorAll('#mainNav ul a').forEach((link) => {
     const href = link.getAttribute('href') || '';
     const cleanHref = href.replace(/^\.\//, '/');
+    const cleanSlug = cleanHref.replace(/\.html$/, '');
     const isMatch =
-      (cleanHref !== '/' && cleanHref !== '/index.html' && path.endsWith(cleanHref)) ||
-      (cleanHref === '/news.html' && path.endsWith('/news-detail.html'));
+      (cleanHref !== '/' &&
+        cleanHref !== '/index.html' &&
+        (path.endsWith(cleanHref) || (cleanSlug && path.endsWith(cleanSlug)))) ||
+      (cleanHref === '/news.html' && (path.endsWith('/news-detail.html') || path.endsWith('/news-detail')));
     if (isMatch) {
       link.setAttribute('aria-current', 'page');
     } else {
@@ -84,8 +87,8 @@ export function initHeader() {
     const anchor = e.target.closest('a[href]');
     if (!anchor || anchor.target === '_blank') return;
     const url = new URL(anchor.href, window.location.origin);
-    const normCurrent = window.location.pathname.replace(/\/index\.html$/, '/');
-    const normTarget = url.pathname.replace(/\/index\.html$/, '/');
+    const normCurrent = window.location.pathname.replace(/\/index\.html$/, '/').replace(/\.html$/, '');
+    const normTarget = url.pathname.replace(/\/index\.html$/, '/').replace(/\.html$/, '');
     if (url.origin === window.location.origin && normCurrent === normTarget && !url.hash) {
       e.preventDefault();
       closeNavDrawer();

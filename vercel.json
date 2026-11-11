@@ -1,0 +1,13 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "framework": "vite",
+  "buildCommand": "npm run build",
+  "outputDirectory": "dist",
+  "cleanUrls": false,
+  "rewrites": [
+    { "source": "/about", "destination": "/about.html" },
+    { "source": "/drinks", "destination": "/drinks.html" },
+    { "source": "/news", "destination": "/news.html" },
+    { "source": "/news-detail", "destination": "/news-detail.html" }
+  ]
+}
