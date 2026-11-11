@@ -5,6 +5,7 @@ let cleanupFns = [];
 export function closeNavDrawer() {
   const header = document.getElementById('header');
   const navBtn = document.getElementById('navWave');
+  document.body.classList.remove('lock');
   if (!header || !header.classList.contains('navopen')) return;
 
   header.classList.add('isclose');
@@ -49,6 +50,9 @@ export function initHeader() {
       closeNavDrawer();
     } else {
       header.classList.add('navopen');
+      if (window.innerWidth <= 768) {
+        document.body.classList.add('lock');
+      }
       if (navBtn) navBtn.setAttribute('aria-expanded', 'true');
     }
   };

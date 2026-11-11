@@ -8,6 +8,8 @@
 
 html {
   font-size: var(--font-size-root);
+  overflow-x: clip;
+  -webkit-text-size-adjust: 100%;
 }
 
 body, h1, h2, h3, h4, h5, h6, p, ul, ol, li, figure, blockquote {
@@ -30,7 +32,8 @@ body {
   letter-spacing: var(--letter-spacing-base);
   color: var(--text-body);
   background-color: var(--bg-primary);
-  overflow-x: hidden;
+  overflow-x: clip;
+  -webkit-tap-highlight-color: transparent;
 }
 
 body.lock {

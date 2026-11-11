@@ -91,6 +91,10 @@ export function initHomeView(container = document) {
     if (desWrap) desWrap.classList.add('leave');
     if (ribbonWrap) ribbonWrap.classList.add('leave');
 
+    const isMobile = scrollState.winW <= 768;
+    const swapDelay = isMobile ? 180 : 300;
+    const doneDelay = isMobile ? 340 : 600;
+
     const tSwap = window.setTimeout(() => {
       const targetIdx = desiredIdx;
       activeIdx = targetIdx;
@@ -104,7 +108,7 @@ export function initHomeView(container = document) {
           rib.classList.toggle('active', i === targetIdx);
         });
       }
-    }, 300);
+    }, swapDelay);
 
     const tDone = window.setTimeout(() => {
       if (desWrap) desWrap.classList.remove('leave');
@@ -113,7 +117,7 @@ export function initHomeView(container = document) {
       if (desiredIdx !== activeIdx) {
         applyPanelCrossfade(desiredIdx);
       }
-    }, 600);
+    }, doneDelay);
 
     panelTimers.push(tSwap, tDone);
   }
@@ -186,10 +190,11 @@ export function initHomeView(container = document) {
   const unsubScroll = onScrollTick(({ y }) => {
     const reduced = prefersReducedMotion();
 
-    // 5a. Hero split motion (matches original scripts.js 1:1)
+    // 5a. Hero split motion (gentle parallax on mobile, 1:1 on desktop)
     if (!reduced && heroBgImg && heroDrinkImg && y < window.innerHeight * 1.5) {
+      const isMobile = scrollState.winW <= 768;
       heroBgImg.style.transform = `scale(${(1 + y / 2000).toFixed(4)})`;
-      heroDrinkImg.style.transform = `translate3d(0, ${y.toFixed(1)}px, 0)`;
+      heroDrinkImg.style.transform = `translate3d(0, ${(isMobile ? y * 0.32 : y).toFixed(1)}px, 0)`;
     }
 
     // 5b. Sticky Rotary Drink Showcase
@@ -230,21 +235,29 @@ export function initHomeView(container = document) {
             detectedIdx = count - 1;
             activeBgColor = slides[count - 1]?.querySelector('figure')?.dataset.bgcolor || '';
           } else {
+            let bestDist = Infinity;
+            let bestIdx = Math.round(progress * (count - 1));
+
             slides.forEach((slide, i) => {
               const baseAngle = i * stepAngle;
               const startAngle = curAngle - baseAngle;
               slide.style.transform = reduced ? 'rotate(0deg)' : `rotate(${startAngle.toFixed(2)}deg)`;
 
-              const isInWindow = reduced
-                ? Math.round(progress * (count - 1)) === i
-                : startAngle >= -50 && startAngle <= 30;
+              if (!reduced && startAngle >= -50 && startAngle <= 36) {
+                const dist = Math.abs(startAngle);
+                if (dist < bestDist) {
+                  bestDist = dist;
+                  bestIdx = i;
+                }
+              }
+            });
 
-              if (isInWindow) {
-                slide.classList.add('in');
+            slides.forEach((slide, i) => {
+              const isActiveSlide = i === bestIdx;
+              slide.classList.toggle('in', isActiveSlide);
+              if (isActiveSlide) {
                 detectedIdx = i;
                 activeBgColor = slide.querySelector('figure')?.dataset.bgcolor || '';
-              } else {
-                slide.classList.remove('in');
               }
             });
           }

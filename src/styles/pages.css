@@ -343,6 +343,7 @@ body:not(.loading) .hga_text {
   margin: 0 0 0 10px;
   width: 1.6rem;
   height: auto;
+  flex-shrink: 0;
 }
 
 .cir_des p {

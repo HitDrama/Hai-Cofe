@@ -5,7 +5,26 @@
   }
 }
 
-/* === TABLET & MOBILE (<= 768px) === */
+/* === TABLET LANDSCAPE (<= 1024px) === */
+@media screen and (max-width: 1024px) {
+  .circle_infos {
+    padding: 16vh 0 0 6vw;
+  }
+
+  #cirDes {
+    padding: 0 0 0 3vw;
+  }
+
+  .blog_wrap aside {
+    width: 26%;
+  }
+
+  .blog_wrap article {
+    width: 68%;
+  }
+}
+
+/* === TABLET PORTRAIT & MOBILE (<= 768px) === */
 @media screen and (max-width: 768px) {
   .cir_des p,
   .sec_line,
@@ -30,196 +49,369 @@
   .eswrap,
   .eswrap_sml {
     width: 100%;
-    padding: 0 2rem;
+    padding: 0 1.5rem;
+  }
+
+  /* Frosted compact mobile top bar on scroll */
+  header.scroll:not(.navopen)::after {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 3.6rem;
+    background: rgba(248, 248, 248, 0.88);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(221, 187, 153, 0.25);
+    z-index: 989;
+    pointer-events: none;
+    animation: fadeIn 0.25s ease;
   }
 
   .eslogo {
-    top: 1.2rem;
-    width: 2.6rem;
-    margin-left: -1.3rem;
+    top: 1rem;
+    width: 2.7rem;
+    margin-left: -1.35rem;
+  }
+
+  header.scroll:not(.navopen) .eslogo {
+    top: 0.45rem;
+    transform: scale(0.72);
+    transform-origin: top center;
   }
 
   #navWave {
-    top: 1rem;
-    right: 1.2rem;
+    top: 0.85rem;
+    right: 1rem;
   }
 
+  header.scroll:not(.navopen) #navWave {
+    top: 0.22rem;
+    transform: scale(0.84);
+    transform-origin: top right;
+  }
+
+  /* Fullscreen Mobile Navigation Drawer (#mainNav) */
   #mainNav {
     width: 100%;
+    height: 100vh;
+    height: 100dvh;
+  }
+
+  #mainNav::before {
+    transition: transform 0.6s var(--ease-editorial-in-out), opacity 0.25s ease;
+  }
+
+  #mainNav > ul {
+    align-items: center;
+    justify-content: center;
+    padding: 0 1.5rem 4.5rem;
+    margin: 0;
+    gap: 0.35rem;
+  }
+
+  #mainNav li:nth-child(2) {
+    margin: 0;
   }
 
   #mainNav ul a {
-    font-size: 12vw;
-    line-height: 26vw;
+    font-size: clamp(2.2rem, 10.5vw, 3.2rem);
+    line-height: 2.15;
+  }
+
+  #mainNav ul a::before {
+    margin: 0 1.25rem 0 0;
+  }
+
+  #mainNav ul a::after {
+    margin: 0 0 0 1rem;
+  }
+
+  #mainNav ul a[aria-current="page"]::before,
+  #mainNav ul a[aria-current="page"]::after {
+    color: #DDBB99;
+    opacity: 1;
+    transform: translateX(0);
   }
 
   #mainNav ul a i {
-    bottom: 1rem;
+    bottom: 0.75rem;
   }
 
   .nav_infos {
     width: 100%;
     transform: none;
     right: auto;
-    padding: 0 2rem;
-    flex-wrap: wrap;
-    gap: 0.75rem;
+    left: 0;
+    bottom: max(1.5rem, env(safe-area-inset-bottom));
+    padding: 0 1.5rem;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    gap: 0.3rem;
+    font-size: 0.9rem;
   }
 
-  /* Popup Modal Mobile */
-  .espopup .inner {
-    width: 100vw;
-    height: 80vh;
-    position: relative;
-    left: 0;
-    top: 10vh;
+  .nav_infos .socials {
+    position: static;
+    display: flex;
+    justify-content: center;
+    gap: 0.85rem;
+    margin: 0 0 0.6rem;
+    order: -1;
+  }
+
+  .nav_infos .socials a {
     margin: 0;
-    padding: 1.5rem;
+    width: 2.75rem;
+    height: 2.75rem;
+  }
+
+  /* Popup Modal & Toast Mobile */
+  .espopup .inner {
+    width: calc(100vw - 2rem);
+    height: auto;
+    max-height: 84vh;
+    max-height: 84svh;
+    overflow-y: auto;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    margin: 0;
+    padding: 3rem 1.5rem 1.75rem;
   }
 
   .espopup .closer {
-    right: 1rem;
-    top: 1rem;
+    right: 0.85rem;
+    top: 0.85rem;
+    width: 2.5rem;
+    height: 2.5rem;
   }
 
-  /* Hero Mobile (matching andtea_hero_mobile.png 1:1) */
-  .hga_bg_wrap figure,
+  .message {
+    padding: 0 1.25rem max(1.5rem, env(safe-area-inset-bottom));
+  }
+
+  .msg_inner {
+    width: 100%;
+    min-width: 0;
+    padding: 0.85rem 1.25rem;
+  }
+
+  /* ==========================================================================
+     1. HOME MOBILE (.page_home)
+     ========================================================================== */
   .section_hga {
-    max-height: 100vh;
+    height: 100vh;
+    height: 100svh;
+    min-height: 560px;
+    max-height: none;
   }
 
   .hga_bg_wrap {
     width: 50%;
+    height: 100%;
+  }
+
+  .hga_bg_wrap figure {
+    height: 100%;
+    max-height: none;
   }
 
   .hga_img {
-    display: none;
+    display: block;
+    width: 74vw;
+    max-width: 290px;
+    right: 50%;
+    top: 50%;
+    margin: -34vw -37vw 0 0;
+    z-index: 2;
+  }
+
+  .hga_img img {
+    width: 76%;
+    max-width: 230px;
+    margin: 0 auto;
+    filter: drop-shadow(0 18px 28px rgba(0, 0, 0, 0.14));
   }
 
   .hga_text {
-    top: 18vh;
+    top: 50%;
     right: 50%;
-    margin: 0 -62vw 0 0;
+    margin: -56vw -56vw 0 0;
+    z-index: 1;
   }
 
   .hga_text svg {
-    width: 124vw;
-    height: 124vw;
+    width: 112vw;
+    height: 112vw;
+  }
+
+  .scrolldown {
+    font-size: 0.8rem;
+  }
+
+  .scr_line {
+    height: 36px;
+    margin-top: 0.5rem;
   }
 
   /* Sticky Rotary Showcase Mobile */
   #cirsliTarget {
     position: relative;
-    height: 500vh;
+    height: 360vh;
   }
 
   .circle_section {
     top: 0;
     position: sticky;
+    height: 100vh;
+    height: 100svh;
     flex-direction: column;
+    justify-content: space-between;
   }
 
   .circle_infos {
     width: 100%;
-    padding: 5.5rem 2rem 0;
+    padding: 4.5rem 1.5rem 0;
+    flex-shrink: 0;
   }
 
   .cirin_title {
-    margin-bottom: 1.2rem;
+    margin-bottom: 1rem;
   }
 
   .cirin_title h2 {
-    font-size: 1.8rem;
+    font-size: 1.55rem;
   }
 
   .cirin_title .icon-brand-4 {
-    font-size: 0.65rem;
-    margin: 0 1.2rem 0 0.5rem;
+    font-size: 0.6rem;
+    margin: 0 0.85rem 0 0.35rem;
   }
 
   #cirTitlezh,
   #cirTitlezh li {
-    height: 2.4rem;
-    line-height: 2.4rem;
+    height: 2.1rem;
+    line-height: 2.1rem;
+  }
+
+  #cirTitlezh {
+    margin-right: 0.4rem;
   }
 
   .cirinfo_btm {
     flex-direction: row;
+    align-items: flex-start;
     justify-content: space-between;
     gap: 1rem;
   }
 
+  #cirinList {
+    flex-shrink: 0;
+  }
+
   #cirinList li {
-    font-size: 1.1rem;
-    line-height: 2.1rem;
-    height: 2.1rem;
-    padding-left: 1.2rem;
+    font-size: 1.05rem;
+    line-height: 2rem;
+    height: 2rem;
+    padding-left: 1.1rem;
   }
 
   #cirinList i {
-    height: 2.1rem;
+    height: 2rem;
+    font-size: 0.62rem;
+    margin-left: -0.7rem;
   }
 
   #cirDes {
-    padding: 0;
+    flex: 1;
+    min-width: 0;
+    padding: 0.1rem 0 0 0.4rem;
+    overflow: visible;
   }
 
   .cir_des {
-    margin-bottom: 0.75rem;
+    margin-bottom: 0.7rem;
   }
 
   .cir_des h3 {
-    font-size: 1rem;
+    font-size: 0.92rem;
+    line-height: 1.35;
+    margin: 0;
+    gap: 0.4rem;
+  }
+
+  .cir_des img {
+    width: 1.35rem;
+    margin: 0;
+    flex-shrink: 0;
   }
 
   .circle_slider {
     width: 100%;
-    height: 50vh;
-    margin-top: auto;
+    flex: 1;
+    min-height: 0;
+    height: auto;
+    margin-top: 0.5rem;
   }
 
   .cir_slide {
-    width: 90vw;
-    top: 2vh;
+    width: 136vw;
+    top: 3vh;
+    left: 0;
+    transform-origin: 100% 50%;
+    transition: opacity 0.45s ease;
   }
 
   .cir_slide figure {
-    margin: 0 auto;
-    width: 50vw;
+    margin: 0 0 0 27vw;
+    width: 46vw;
+    max-width: 195px;
   }
 
   .cir_mainimg {
-    width: 50vw;
-    max-width: 220px;
+    width: 100%;
+    max-width: none;
   }
 
   .cir_gifimg {
     height: 36%;
-    top: -6vw;
-    left: 10vw;
+    top: -9vw;
+    left: 16%;
   }
 
   .cir_go_series {
-    bottom: 2rem;
+    bottom: max(1.25rem, env(safe-area-inset-bottom));
     right: auto;
-    left: 2rem;
+    left: 1.5rem;
+  }
+
+  .cir_go_series a {
+    padding: 0.4rem 0;
+    font-size: 0.92rem;
   }
 
   .cir_skip {
-    opacity: 0.6;
-    right: 2rem;
+    opacity: 0.65;
+    right: 1.5rem;
     top: auto;
     left: auto;
-    bottom: 2rem;
+    bottom: max(1.25rem, env(safe-area-inset-bottom));
+    padding: 0.4rem 0;
+    font-size: 0.88rem;
   }
 
   .cir_skip .arrow {
     display: none;
   }
 
-  /* Home Intro Mobile */
+  /* Home Intro Z-Pattern Mobile */
   .section_hgc {
-    padding: 2rem 0;
+    padding: 1rem 0 2rem;
   }
 
   .home_intro {
@@ -233,10 +425,20 @@
     padding: 0;
   }
 
+  .hmin_img figure {
+    aspect-ratio: 4 / 3;
+  }
+
+  .hmin_img figure img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
   .home_intro.even .hmin_text,
   .hmin_text {
     order: 2;
-    padding: 4rem 2rem;
+    padding: 2.75rem 1.5rem 3.25rem;
   }
 
   .home_intro.even .hmin_text h2,
@@ -245,37 +447,60 @@
     align-items: center;
     text-align: center;
     padding: 0;
+    font-size: 1.45rem;
+  }
+
+  .hmin_text h2::after {
+    margin: 1rem auto;
   }
 
   .video_play {
     left: 50%;
     top: 50%;
+    width: 5.4rem;
+    height: 5.4rem;
+    margin: -2.7rem 0 0 -2.7rem;
+    font-size: 0.85rem;
     transform: none !important;
   }
 
+  /* Curved SVG Ribbon & News List Mobile */
   .section_hgd {
     height: auto;
   }
 
   .section_hgd figure {
-    height: 50vw;
+    height: 56vw;
   }
 
   .section_hgd figure img {
     height: 100%;
     margin-top: 0;
+    object-fit: cover;
   }
 
   .ovaltext_wrap {
-    margin: 0;
+    margin: -2vw 0 0;
+  }
+
+  .ovaltext textPath {
+    font-size: 7.5rem;
   }
 
   .title_leaf {
-    padding: 5rem 0 2rem;
+    padding: 3.5rem 0 1.75rem;
+  }
+
+  .title_leaf .deco::before {
+    height: 3.5rem;
   }
 
   .title_leaf h2 {
-    font-size: 2.6rem;
+    font-size: 2.3rem;
+  }
+
+  .page_home .listpost_style {
+    padding: 0 0 5rem;
   }
 
   .listpost div.post_image {
@@ -283,10 +508,12 @@
   }
 
   .listpost a {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.4rem;
-    padding: 1.2rem 0;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: center;
+    column-gap: 1rem;
+    row-gap: 0.3rem;
+    padding: 1.15rem 0;
   }
 
   .listpost a > div {
@@ -294,26 +521,44 @@
   }
 
   .listpost .date {
-    width: 100%;
-    font-size: 0.85rem;
+    grid-column: 1 / -1;
+    width: auto;
+    font-size: 0.82rem;
   }
 
   .listpost .posttitle {
-    width: 82%;
+    width: auto;
+    font-size: 0.98rem;
+    line-height: 1.45;
   }
 
-  /* About Mobile */
+  .listpost .linkto {
+    width: auto;
+    text-align: right;
+  }
+
+  .listpost .linkto .arrow {
+    width: 3rem;
+  }
+
+  /* ==========================================================================
+     2. ABOUT MOBILE (.page_about)
+     ========================================================================== */
   .page_about {
     width: 100%;
-    overflow: hidden;
+    overflow-x: clip;
   }
 
   .abtsec_a {
-    padding-top: 8rem;
+    padding-top: 5.5rem;
+  }
+
+  .abtsec_a > .eswrap {
+    padding: 0;
   }
 
   .abtsec_a > .eswrap::before {
-    height: 2rem;
+    height: 2.2rem;
     position: relative;
     left: auto;
     display: block;
@@ -321,8 +566,29 @@
   }
 
   .abta_deco_title {
-    font-size: 10vw;
+    font-size: 8.8vw;
     margin: 0 0 2rem;
+    padding: 0 1.5rem;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+
+  .abta_deco_title > div:first-child {
+    width: 45%;
+    padding: 0;
+    text-align: right;
+  }
+
+  .abta_deco_title > div:last-child {
+    width: 55%;
+    padding: 0;
+  }
+
+  .abta_deco_title h1 {
+    font-size: 1.05rem;
+    line-height: 1.45;
+    margin: 0 0 0.4rem;
+    text-wrap: balance;
   }
 
   .abta_cont_wrap:first-child {
@@ -339,27 +605,51 @@
     width: 100% !important;
   }
 
+  .abta_cont_wrap figure {
+    aspect-ratio: 4 / 3;
+  }
+
   .abta_cont_wrap > div {
     margin: 0;
-    padding: 3.5rem 0;
+    padding: 2.5rem 1.5rem 3rem;
     order: 2;
   }
 
+  .abta_cont_wrap .bellfont {
+    font-size: 1.45rem;
+    line-height: 1.3;
+    margin-bottom: 0.65rem;
+    color: #DDBB99;
+  }
+
+  .big_circle_style {
+    margin: 2.5rem 0 4.5rem;
+  }
+
   .bcs_inner {
-    padding: 2.5rem 2rem;
-    width: 92%;
+    padding: 2.25rem 1.5rem;
+    width: 90%;
   }
 
   .bcs_inner br {
     display: none;
   }
 
+  .big_circle_style h3 {
+    font-size: 1rem;
+    line-height: 1.65;
+  }
+
   .bcs_inner .star {
-    width: 3rem;
+    width: 2.6rem;
+    height: 2.4rem;
+    right: 0.25rem;
+    top: -4px;
   }
 
   .bcs_inner::after {
-    height: 4rem;
+    height: 3.2rem;
+    top: -1.8rem;
   }
 
   .track_wrap {
@@ -369,31 +659,73 @@
   .abtsec_b::before {
     width: 100%;
     bottom: auto;
-    top: 12rem;
-    height: 90%;
+    top: 10rem;
+    height: 88%;
   }
 
+  .store_gal {
+    padding: 2rem 0 3rem;
+  }
+
+  .store_des {
+    margin: 1.75rem 0 2.25rem;
+  }
+
+  .abtsec_c .title_leaf {
+    padding: 4.5rem 0 1.5rem;
+  }
+
+  /* Core DNA Sculpture Mobile — clean single-line horizontal lockups */
   .core_visual {
     margin: 0;
-    font-size: 9vw;
+    font-size: 6.2vw;
+    line-height: 1.15;
+  }
+
+  .core_visual::before {
+    width: 72vw;
+    height: 30vw;
+    margin: -15vw 0 0 -36vw;
   }
 
   .core_visual > div {
+    flex-wrap: nowrap;
+    gap: 0.25rem;
+  }
+
+  .core_visual > div:nth-child(2) {
+    font-size: 5vw;
     flex-wrap: wrap;
+    row-gap: 0.15rem;
+  }
+
+  .core_visual span {
+    padding: 0.4rem 0;
   }
 
   .core_visual img {
-    width: 6vw;
-    height: 6vw;
+    width: 6.5vw;
+    height: 6.5vw;
+    min-width: 24px;
+    min-height: 24px;
+    margin: 0 0.25rem;
   }
 
   .core_visual .oval {
-    width: 34vw;
-    padding: 0.9rem 0.5rem;
-    font-size: 0.85rem;
+    width: auto;
+    white-space: nowrap;
+    padding: 0.36rem 0.6rem;
+    font-size: clamp(0.62rem, 2.45vw, 0.8rem);
+    margin: 0 0.1rem;
   }
 
-  /* Drinks Mobile + Authentic 'TAP ME ↓' Fontello Badge (\e815) */
+  .core_link {
+    margin: 3rem 0 4.5rem;
+  }
+
+  /* ==========================================================================
+     3. DRINKS MOBILE (.page_drinks)
+     ========================================================================== */
   .cup_slider.esflex {
     display: flex;
     flex-wrap: wrap;
@@ -406,20 +738,21 @@
   }
 
   .cup_slider .bgimg {
-    height: 70vh;
+    height: 64vh;
+    min-height: 440px;
   }
 
   .cup_slider.esflex > div.main_drink {
     width: 40vw;
-    height: 60vw;
+    height: 58vw;
     margin: -14vw 0 0 -20vw;
-    top: 70vw;
+    top: 66vw;
   }
 
   .cup_smimg {
     position: absolute;
-    right: -170vw;
-    top: -36vh;
+    right: -178vw;
+    top: -33vh;
     width: 220vw;
     z-index: 1;
   }
@@ -428,9 +761,9 @@
     content: '\e815';
     font-family: 'fontello';
     position: absolute;
-    top: 18vw;
-    right: 13.5vw;
-    font-size: 5rem;
+    top: 19vh;
+    right: 11vw;
+    font-size: 3.4rem;
     color: #000000;
     z-index: 3;
     pointer-events: none;
@@ -442,20 +775,20 @@
 
   .cup_slider.esflex > div.infos {
     width: 100%;
-    padding: 2.5rem 2rem 2rem;
+    padding: 2.25rem 1.5rem 2rem;
     background-color: #FFFFFF;
   }
 
   .cup_title,
   .cup_des {
     height: auto;
-    margin: 0 0 1rem;
+    margin: 0 0 0.75rem;
     padding: 0;
   }
 
   .cup_title .series {
-    font-size: 1.2rem;
-    margin: 0 0 10px;
+    font-size: 1.15rem;
+    margin: 0 0 0.35rem;
   }
 
   .drisec_b {
@@ -463,26 +796,51 @@
   }
 
   .drisec_b .big_circle_style {
-    margin: 3rem 0;
+    margin: 3.5rem 0 2.5rem;
   }
 
   .drisec_b .big_circle_style .eswrap {
-    width: 92%;
+    width: 100%;
+    padding: 0 1.5rem;
+  }
+
+  .bcs_inner h2 {
+    font-size: 1.35rem;
+    gap: 0.25rem;
+  }
+
+  .cream_layout {
+    margin: 0 0 2rem;
   }
 
   .cream_layout .eswrap {
     flex-direction: row;
-    align-items: flex-start;
-    padding: 0;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 1.25rem 0 0;
   }
 
   .cream_bigimg {
-    width: 50vw;
-    height: 70vw;
+    width: 48vw;
+    height: 66vw;
+    flex-shrink: 0;
   }
 
   .cream_navs {
-    margin: 1rem 2rem 0 0;
+    margin: 0;
+  }
+
+  .cream_navs li {
+    font-size: 1.05rem;
+    line-height: 2.2rem;
+    height: 2.2rem;
+    padding: 0 1rem 0 0;
+    text-align: right;
+  }
+
+  .cream_navs i {
+    height: 2.2rem;
+    margin: 0 -0.4rem 0 0;
   }
 
   .cream_bigcup {
@@ -490,9 +848,9 @@
     top: auto;
     bottom: auto;
     left: auto;
-    width: 80vw;
-    height: 42vw;
-    margin: -14vw auto 0;
+    width: 78vw;
+    height: 40vw;
+    margin: -10vw auto 0;
   }
 
   .cream_ribbon {
@@ -510,41 +868,137 @@
     position: relative;
     width: 100%;
     right: auto;
-    padding: 2rem;
+    padding: 1.75rem 1.5rem 1rem;
+  }
+
+  .creaminfo .des {
+    margin: 0.85rem 0 1rem;
   }
 
   .creaminfo_link.esflex {
     flex-direction: row;
+    flex-wrap: wrap;
+    row-gap: 0.25rem;
+    font-size: 0.92rem;
   }
 
-  .menu_wrap {
-    padding: 0;
+  /* Side-by-side Sticky Cup + Accordion Menu on Mobile */
+  .drisec_c {
+    padding: 0 0 4rem;
   }
 
-  .menu_list {
-    padding: 0 0 0 1.5rem;
+  .drisec_c .title_leaf {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+    padding: 2rem 1.5rem 1rem;
+  }
+
+  .drisec_c .title_leaf .deco {
+    align-items: flex-start;
+  }
+
+  .drisec_c .title_leaf h2 {
+    align-items: flex-start;
+  }
+
+  .drisec_c .esflex {
+    position: relative;
+    flex-direction: row;
+  }
+
+  #menuImg {
+    position: absolute;
+    right: -0.5rem;
+    top: 0;
+    width: 38%;
+    height: 100%;
+    z-index: 2;
+    pointer-events: none;
   }
 
   #menuImg figure {
-    height: 44vh;
+    position: sticky;
+    top: 24vh;
+    height: 40vh;
   }
 
   #menuImg img {
-    max-height: 38vh;
+    max-height: 34vh;
+    max-width: 100%;
+    object-fit: contain;
+  }
+
+  .drisec_c .escol2 > div.menu_wrap,
+  .menu_wrap {
+    width: 60%;
+    padding: 0 0.5rem 0 1.25rem;
+    position: relative;
+    z-index: 3;
+  }
+
+  .menu_title {
+    padding: 1.5rem 0 0.35rem;
+  }
+
+  .menu_title h3 {
+    font-size: 1.05rem;
+    line-height: 1.3;
   }
 
   .menu_title span {
-    font-size: 2.4rem;
+    display: block;
+    margin-left: 0;
+    font-size: 1.85rem;
+    line-height: 1.15;
   }
 
-  /* News & News Detail Mobile */
+  .menu_title sup {
+    font-size: 0.95rem;
+  }
+
+  .menu_list {
+    padding: 0;
+  }
+
+  .es_collapse {
+    padding: 0 0 1.15rem;
+  }
+
+  .me_title {
+    font-size: 0.98rem;
+    line-height: 1.4;
+  }
+
+  .me_title i {
+    left: -1.4rem;
+    top: 2px;
+    font-size: 22px;
+  }
+
+  .me_title span {
+    display: block;
+    margin: 0.15rem 0 0;
+    font-size: 0.8rem;
+    line-height: 1.3;
+  }
+
+  .me_des > div {
+    font-size: 0.88rem;
+    line-height: 1.55;
+  }
+
+  /* ==========================================================================
+     4 & 5. NEWS & NEWS DETAIL MOBILE (.page_blog)
+     ========================================================================== */
   .page_blog {
-    padding: 10rem 0 0;
+    padding: 6.5rem 0 0;
   }
 
   .blog_wrap {
     flex-direction: column;
-    padding: 0 2rem 4rem;
+    padding: 0 1.5rem 3.5rem;
   }
 
   .blog_wrap aside,
@@ -555,40 +1009,55 @@
 
   .cate_titledeco {
     text-align: center;
+    font-size: 2.6rem;
   }
 
   .cate_titledeco i {
-    margin: 0 0 0 -25px;
+    margin: 0 0 0 -22px;
   }
 
   .post_cate {
-    padding: 1.5rem 0 2rem;
+    padding: 1rem 0 1.5rem;
   }
 
   #postCategorie > div > ul {
     display: flex;
     flex-wrap: nowrap;
     overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
     justify-content: flex-start;
-    padding: 0 0 1rem;
+    width: max-content;
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 0.85rem 0 0.65rem;
+  }
+
+  #postCategorie > div > ul::-webkit-scrollbar {
+    display: none;
   }
 
   #postCategorie .single_tags ul,
   #postCategorie .social_media ul,
   #postCategorie .single_title ul {
     display: block;
+    width: 100%;
     text-align: center;
     overflow: visible;
+    padding: 0;
   }
 
   .blognav::after {
-    top: 0;
-    left: 42%;
+    top: -0.35rem;
+    left: 50%;
+    margin: 0 0 0 -0.25rem;
   }
 
   .blognav button,
   .blognav a {
-    padding: 0 0.9rem;
+    padding: 0 0.6rem;
+    line-height: 1.85rem;
+    font-size: 0.85rem;
     border-right: 1px solid #CCCCCC;
     white-space: nowrap;
   }
@@ -611,7 +1080,7 @@
   .the_post {
     flex: 100%;
     max-width: 100%;
-    padding: 1rem 0 1.5rem;
+    padding: 0.75rem 0 1.75rem;
   }
 
   .the_post:nth-child(even) {
@@ -622,32 +1091,48 @@
     height: 56vw;
   }
 
+  .the_post_text h3 {
+    font-size: 1.15rem;
+    line-height: 1.45;
+  }
+
   .page-numbers {
     justify-content: center;
   }
 
   .espagination.eswrap {
-    padding: 2rem 0 5rem;
+    padding: 1rem 0 4rem;
+  }
+
+  /* Single Article Mobile */
+  .single_title {
+    margin: 0 0 1.25rem;
+    padding: 0 0.5rem;
   }
 
   .single_title .date {
     justify-content: center;
     flex-direction: column;
+    margin: 0 0 1rem;
   }
 
   .single_title .date::before {
     position: relative;
     left: auto;
     bottom: 0;
+    height: 2.2rem;
     margin-bottom: 0.5rem;
   }
 
   .single_title i {
-    margin: 0 1.2rem 0.4rem 0;
+    margin: 0 0 0.35rem;
   }
 
   .single_title h1 {
     text-align: center;
+    font-size: 1.35rem;
+    line-height: 1.45;
+    text-wrap: balance;
   }
 
   .single_title .post-categories {
@@ -660,27 +1145,71 @@
   }
 
   .social_media li:first-child {
-    margin: 0 0 0.4rem;
+    margin: 0 0 0.35rem;
   }
 
   .social_media {
-    margin: 0 0 1.5rem;
+    margin: 0 0 1.25rem;
+  }
+
+  .single_content {
+    padding: 0 0 2.5rem;
   }
 
   .edit_style {
     width: 100%;
-    margin: 2.5rem 0;
+    margin: 2rem 0;
   }
 
-  /* Footer Mobile */
+  .edit_style p {
+    font-size: 1rem;
+    line-height: 1.75;
+  }
+
+  .edit_style blockquote {
+    padding: 2.25rem 0.5rem 0;
+    margin: 2.25rem 0 2.5rem;
+  }
+
+  .edit_style blockquote::before {
+    top: -12px;
+    font-size: 3.4rem;
+  }
+
+  .edit_style h3,
+  .edit_style h4 {
+    font-size: 1.25rem;
+    line-height: 1.4;
+    margin: 2.75rem 0 1.25rem;
+    padding: 0 0 0 0.85rem;
+  }
+
+  .edit_style h3::before,
+  .edit_style h4::before {
+    width: 3.4rem;
+    height: 2rem;
+    left: -0.35rem;
+    top: -3px;
+  }
+
+  .related_news {
+    padding: 2.25rem 0 1rem;
+    margin: 2.5rem 0 0;
+  }
+
+  /* ==========================================================================
+     6. FOOTER MOBILE
+     ========================================================================== */
   footer .eswrap {
-    padding: 9rem 2rem 0;
+    padding: 7.5rem 1.5rem 0;
   }
 
   #backtop {
     position: absolute;
-    right: 2rem;
-    top: -2rem;
+    right: 1.25rem;
+    top: 0.75rem;
+    transform: scale(0.78);
+    transform-origin: top right;
   }
 
   .footsocial {
@@ -688,7 +1217,7 @@
     left: auto;
     bottom: auto;
     transform: none;
-    margin: 0 0 1rem;
+    margin: 0 0 1.25rem;
   }
 
   .footsocial .socials {
@@ -700,45 +1229,73 @@
     text-align: center;
   }
 
+  .footinfos {
+    gap: 0.3rem;
+    max-width: 100%;
+    margin: 0 auto;
+  }
+
   .copyright {
-    padding: 3rem 0 2.5rem;
+    padding: 2.25rem 1.5rem max(2.25rem, env(safe-area-inset-bottom));
+    font-size: 0.85rem;
   }
 }
 
-/* === SMALL MOBILE (<= 550px) === */
+/* === COMPACT SMARTPHONE (<= 550px) === */
 @media screen and (max-width: 550px) {
-  .drisec_a::before {
-    top: 22vh;
-    font-size: 3rem;
-    right: 11vw;
-  }
-
   .cirin_title h2 {
     font-size: 1.35rem;
   }
 
   #cirTitlezh,
   #cirTitlezh li {
-    height: 1.8rem;
-    line-height: 1.8rem;
+    height: 1.85rem;
+    line-height: 1.85rem;
   }
 
   .cirin_title .icon-brand-4 {
-    font-size: 0.6rem;
-    margin: 0 1.1rem 0 0.35rem;
+    font-size: 0.56rem;
+    margin: 0 0.75rem 0 0.25rem;
+  }
+
+  #cirinList li {
+    font-size: 0.98rem;
+    line-height: 1.88rem;
+    height: 1.88rem;
+    padding-left: 0.95rem;
+  }
+
+  #cirinList i {
+    height: 1.88rem;
+  }
+
+  .cir_des h3 {
+    font-size: 0.86rem;
+  }
+
+  .drisec_a::before {
+    top: 20vh;
+    font-size: 3rem;
+    right: 10vw;
   }
 
   .cream_navs li {
-    font-size: 1rem;
-    padding: 0 12px 0 0;
+    font-size: 0.96rem;
+    line-height: 2rem;
+    height: 2rem;
+    padding: 0 0.85rem 0 0;
   }
 
-  .cream_navs {
-    margin: 0.5rem 1rem 0 0;
+  .cream_navs i {
+    height: 2rem;
   }
 
-  #backtop {
-    transform: scale(0.8);
+  .creaminfo h2 {
+    font-size: 1.35rem;
+  }
+
+  .title_leaf h2 {
+    font-size: 2rem;
   }
 }
 
