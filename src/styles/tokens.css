@@ -1,10 +1,10 @@
 :root {
-  /* === 1. COLOR TOKENS === */
+  /* === 1. EXACT &TEA EDITORIAL COLOR PALETTE === */
   --bg-primary: #F8F8F8;
   --bg-hero: #EDEDE8;
   --bg-surface-alt: #EBEBE8;
   --bg-elevated: #FFFFFF;
-  --bg-overlay: rgba(255, 255, 255, 0.76);
+  --bg-overlay: rgba(255, 255, 255, 0.7);
 
   /* Dynamic Series Pastel Backgrounds */
   --bg-series-cream: #FDF9E8;
@@ -13,14 +13,14 @@
   --bg-series-milk: #FAFAFA;
   --bg-series-limited: #FFF8F8;
 
-  /* Text Hierarchy (WCAG AA upgraded functional contrast while preserving editorial warmth) */
+  /* Text Hierarchy */
   --text-strong: #000000;
   --text-body: #282828;
-  --text-muted: #595959;
-  --text-subtle: #686868;
-  --text-date: #6B6B6B;         /* >= 4.9:1 on #F8F8F8 (fixes original #CCC 1.51:1) */
-  --text-accent-aa: #826243;    /* >= 4.7:1 on #FDF9E8/#F8F8F8 (fixes #DDBB99 1.70:1 on small text) */
-  --text-disabled: #707070;
+  --text-muted: #666666;
+  --text-subtle: #808080;
+  --text-date: #CCCCCC;
+  --text-accent-aa: #DDBB99;
+  --text-disabled: #AAAAAA;
 
   /* Decorative Brand Accents & Borders */
   --accent-primary: #DDBB99;
@@ -32,14 +32,14 @@
   --state-success: #7BAA82;
 
   /* === 2. TYPOGRAPHY TOKENS === */
-  --font-display: 'Bellefair', Georgia, serif;
-  --font-sans: 'Be Vietnam Pro', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  --font-display: 'Bellefair', serif;
+  --font-sans: 'Be Vietnam Pro', 'PingFang TC', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 
   --font-size-root: 16px;
   --font-size-jumbo-marquee: 10vw;
   --font-size-curved-svg: 8vw;
   --font-size-ribbon: 7vw;
-  --font-size-hero-svg: 5.8rem;
+  --font-size-hero-svg: 6.3rem;
   --font-size-h1: 4.5vw;
   --font-size-nav-link: 4vw;
   --font-size-sec-title: 3vw;
@@ -52,8 +52,8 @@
   --font-size-xs: 0.8rem;
 
   --line-height-body: 1.8;
-  --line-height-heading: 1.4;
-  --letter-spacing-base: 0.04em;
+  --line-height-heading: 1.5;
+  --letter-spacing-base: 1px;
   --letter-spacing-wide: 0.1em;
 
   /* === 3. LAYOUT & SPACING TOKENS === */
@@ -70,4 +70,3 @@
   --dur-dramatic: 1s;
   --dur-reveal: 2s;
 }
-

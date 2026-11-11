@@ -60,7 +60,7 @@ a {
 }
 
 a:hover {
-  color: var(--text-accent-aa);
+  color: var(--accent-primary);
 }
 
 button {
@@ -75,23 +75,22 @@ button {
 a:focus-visible,
 button:focus-visible,
 [tabindex="0"]:focus-visible {
-  outline: 2px solid var(--text-accent-aa);
+  outline: 1px solid var(--accent-secondary);
   outline-offset: 4px;
 }
 
 .bellfont {
   font-family: var(--font-display);
-  font-weight: 400;
-  letter-spacing: 0.05em;
+  font-weight: normal;
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-weight: 400;
+  font-weight: normal;
   line-height: var(--line-height-heading);
 }
 
 h1, h2 {
-  color: var(--text-accent-aa);
+  color: var(--accent-primary);
 }
 
 h1 { font-size: var(--font-size-h1); }
@@ -184,10 +183,9 @@ h3 { font-size: var(--font-size-h3); }
   height: 100%;
   object-fit: cover;
   transform: scale(1.2);
-  transition: transform var(--dur-reveal) var(--ease-smooth-out);
+  transition: transform var(--dur-reveal);
 }
 
 .img_scalin.esin img {
   transform: scale(1);
 }
-

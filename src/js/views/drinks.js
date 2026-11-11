@@ -230,13 +230,6 @@ export function initDrinksView(container = document) {
     const firstTitle = collapseItems[0].querySelector('.me_title')?.textContent?.trim() || 'Hai Cofe';
     menuFigure.innerHTML = `<img src="${firstUrl}" alt="${firstTitle}" />`;
 
-    // Open first item initially for clear visual affordance
-    const firstPanel = collapseItems[0].querySelector('.me_des');
-    if (firstPanel && firstPanel.children[0]) {
-      collapseItems[0].classList.add('open');
-      firstPanel.style.height = `${firstPanel.children[0].offsetHeight}px`;
-    }
-
     collapseItems.forEach((item) => {
       const headerTrigger = item.querySelector('.me_title');
       if (!headerTrigger) return;

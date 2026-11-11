@@ -129,7 +129,7 @@ export function initHomeView(container = document) {
           ribbonWrap.classList.remove('leave');
         }
         listIsAni = false;
-      }, 320);
+      }, 500);
     }
   }
 
@@ -186,7 +186,7 @@ export function initHomeView(container = document) {
     // 5a. Hero split motion
     if (!reduced && heroBgImg && heroDrinkImg && y < window.innerHeight * 1.4) {
       heroBgImg.style.transform = `scale(${(1 + y / 2000).toFixed(4)})`;
-      heroDrinkImg.style.transform = `translate3d(0, ${(y * 0.42).toFixed(1)}px, 0)`;
+      heroDrinkImg.style.transform = `translate3d(0, ${(y * 0.65).toFixed(1)}px, 0)`;
     }
 
     // 5b. Sticky Rotary Drink Showcase
@@ -209,7 +209,7 @@ export function initHomeView(container = document) {
 
           const isInWindow = reduced
             ? Math.round(progress * (count - 1)) === i
-            : startAngle >= -46 && startAngle <= 28;
+            : startAngle >= -50 && startAngle <= 30;
 
           if (isInWindow) {
             slide.classList.add('in');

@@ -31,3 +31,4 @@ npm run build && npm run preview
 node scripts/generate-assets.mjs   # SVG logo, cups, icons, garnishes
 node scripts/generate-news.mjs     # news.html + news-detail.html
 ```
+
